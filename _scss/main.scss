@@ -40,6 +40,7 @@ body {
 
 h1, h2, h3, h4, h5, h6,
 address {
+    word-break: break-word;
     font-weight: bold;
     line-height: 1;
     margin-bottom: 10px;
@@ -62,6 +63,8 @@ h6 {
 ol, ul {
     margin: auto;
     padding: inherit;
+
+    p { font-size: 1em; }
 }
 
 dl { font-size: $default-font-size; }
@@ -123,6 +126,7 @@ cite, p {
 img { margin-bottom: 15px; }
 
 p {
+    word-break: break-word;
     font-size: $default-font-size;
     margin: 0 0 1em;
 
