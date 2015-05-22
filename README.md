@@ -24,6 +24,12 @@ Master Builder is a simple out of the box front-end templating base used for bui
     * Concatenates and uglifies all CSS and JS files
     * Compresses images
 - Standard Content to quickly visualize any kind of content
+- Lazy loading images (uses [jQuery_lazyload](https://github.com/tuupola/jquery_lazyload) )
+
+##Release History
+`v1.0.0` - Your simple straight-forward base boilerplate for your next project
+
+`v1.1.0` - Added lazy loading feature for images.  Minor CSS fixes for mobile.
 
 ##Dependencies
 ###Grunt Javascript Task Runner
@@ -235,11 +241,13 @@ line 37:    var margins = {
 ```
 These are the margins that will be set when the table is printed on the PDF.
 
+###Lazy Load Images
+`<img>` tags must have the class `lazy` attached to it and a data attribute named `data-original` containing the path of the image.  JS will do the rest.
+
 ##Issues, Bugs or Feature Requests
 If you found any bugs, would like to contribute, have comments or suggestions, head down to the [issues section](https://github.com/oninross/master_builder/issues) and log it in.  I will be more than happy to discuss it.
 
 ##Features to Come
-- Lazy loading
 - CTA button to be on top of table
 - Customizable mobile menu to be either in the header or floating on on the bottom
 - Google Material Design components
