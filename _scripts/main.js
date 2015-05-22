@@ -71,6 +71,11 @@ function ripple(e, el){
     // Using the shorthand method to save characters
     $(function() {
 
+        // Init Lazy Loading
+        $("img.lazy").lazyload({
+            effect : "fadeIn"
+        });
+
         /* Placeholder Alternative */
         (function (){
             if ( Modernizr.placeholder === true ){
