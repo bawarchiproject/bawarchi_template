@@ -68,8 +68,13 @@
             }
         },
         destroy : function( el ) {
+            if ( !$('.table-wrapper').length ){
+                return false;
+            }
+
             $('body').unbind('click', '.js-print-table');
-            el.unwrap().next().remove();
+            el.unwrap()
+                .prev().remove();
         },
         hasHorizontalScrollBar : function ( el ){
             return el.get(0).scrollWidth > el.width();

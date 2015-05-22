@@ -112,6 +112,7 @@ function ripple(e, el){
             });
         })();
 
+
         /* JRespond Breakpoints */
         var jRes = jRespond([
             {
