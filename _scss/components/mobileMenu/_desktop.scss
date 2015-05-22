@@ -1,0 +1,7 @@
+#primary-nav {
+	h1 { margin-left: 0; }
+
+	ul {
+		a:hover { background: lighten( $lightBlue, 10% ); }
+	}
+}

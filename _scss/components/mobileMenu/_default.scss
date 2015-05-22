@@ -1,0 +1,65 @@
+#primary-nav {
+    @extend %clearfix;
+
+    background: $blue;
+
+    & > .nav {
+        @extend %container;
+
+        padding: 0 20px !important;
+    }
+
+    h1 {
+        font-size: 1.4em;
+        float: left;
+        padding: 5px 0;
+
+        a { color: $white; }
+    }
+
+    ul {
+        @extend %clearfix;
+
+        float: right;
+        margin-bottom: 0;
+        padding: 0;
+
+        li { float: left; }
+
+        a {
+            color: $white;
+            display: block;
+            font-size: 1em;
+            margin-bottom: 0;
+            overflow: hidden;
+            padding: 10px;
+            position: relative;
+
+            &.active { background: $red; }
+
+            span {
+                position: relative;
+                z-index: 5;
+            }
+        }
+    }
+
+    img { @extend .img-responsive; }
+
+    .wrap {
+        float: left;
+        height: 40px;
+    }
+
+    .lvl2 {
+        background: darken( $blue, 10%);
+
+        li { border-top: 1px solid darken( $blue, 20%); }
+    }
+
+    .lvl3 {
+        background: darken( $blue, 20%);
+
+        li { border-top: 1px solid darken( $blue, 30%); }
+    }
+}

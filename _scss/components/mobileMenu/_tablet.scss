@@ -1,0 +1,27 @@
+#primary-nav {
+	@include box-shadow(0, 2px, 5px, 0, rgba(0, 0, 0, 0.26));
+
+	& > .nav { padding: 0 !important; }
+
+	h1 { margin-left: $gutterTablet; }
+
+	button,
+	.sub-nav,
+	.lvl2,
+	.lvl3 { display: none; }
+
+	.lvl2 {
+		float: none;
+		position: absolute;
+		right: 0;
+		z-index: 1;
+
+		li { float: none; }
+	}
+
+	.lvl3 {
+		width: 100%;
+
+		li a { padding-left: 20px; }
+	}
+}
