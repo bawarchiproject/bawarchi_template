@@ -1,5 +1,5 @@
 /**
- * Wrap all tables in a <div class='table' />
+ * Wrap all tables in a <div class='table-wrapper' />
  * Print table in PDF for mobile users (dependent on jspdf.custom.js)
  */
 var RR = (function (parent, $) {
@@ -12,70 +12,24 @@ var RR = (function (parent, $) {
     var wrap = function() {
         var $contentTable = $('.printableTable');
 
-        if ( !$contentTable.length )
-            return false;
-
-        if ( !$contentTable.parent().hasClass('table') && $contentTable.parent().hasHorizontalScrollBar() ){
-            $contentTable.wrap( '<div class="table"></div>' )
-                .parent()
-                .after('<button class="btn-print js-print-table" >Print Table</a>');
-
-            var $btnPrint = $('.js-print-table');
-            $btnPrint.on('click', function (){
-
-                // PDF Settings to churn out jsPDF('orientation', 'unit', 'size');
-                var pdf = new jsPDF('l', 'pt', 'a4');
-
-                var source = $('.table')[0];
-                var specialElementHandlers = {
-                    '#bypassme': function (element, renderer) {
-                        return true;
-                    }
-                };
-
-                // Margins to set on the paper
-                var margins = {
-                    top: 20,
-                    bottom: 20,
-                    left: 20,
-                    right: 20,
-                    width: '100%'
-                };
-
-                // Where the magic happens
-                pdf.fromHTML(
-                    source,
-                    margins.left,
-                    margins.top, {
-                        'width': margins.width,
-                        'elementHandlers': specialElementHandlers
-                    },
-                    function (dispose) {
-                        // save the pdf
-                        pdf.save( $contentTable.data('title') + '.pdf');
-                    },
-                    margins
-                );
+        if ( !$contentTable.parent().hasClass('table-wrapper') ){
+            $contentTable.pdfTable( 'init', {
+                position: 'float', // top, bottom, float
+                orientation: 'l',   // landscape (l), portrait (p)
+                unit: 'pt',         // pt, mm, cm, in.
+                format: 'a4',       // a3, a4, a5, letter, legal
+                marginTop: 20,
+                marginRight: 20,
+                marginBottom: 20,
+                marginLeft: 20,
             });
-        } else {
-            $('.row.container').wrap( '<div class="table no-scrollbar"></div>' );
         }
     };
 
     var unwrap = function (){
-        var $wrappedTable = $('#content .table'),
-            $btnPrint = $('.js-print-table');
+        var $contentTable = $('.printableTable');
 
-        if ( $wrappedTable.length ){
-            $btnPrint.off('click');
-
-            $wrappedTable
-                .find('table')
-                    .unwrap()
-                    .end()
-                .next()
-                .remove();
-        }
+        $contentTable.pdfTable('destroy');
     };
 
     parent.tableScrollbar = {
