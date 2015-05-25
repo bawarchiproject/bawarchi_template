@@ -41,8 +41,10 @@
 <li>Lazy loading images (uses <a href="https://github.com/tuupola/jquery_lazyload">jQuery_lazyload</a> )</li>
 </ul>
 <h2 id="release-history">Release History</h2>
-<p><code>v1.0.0</code> - Your simple straight-forward base boilerplate for your next project</p>
+<p><code>v1.2.1</code> - Updated PDF Table usage</p>
+<p><code>v1.2.0</code> - Converted jsPDF table printing into jQuery Plugin.</p>
 <p><code>v1.1.0</code> - Added lazy loading feature for images.  Minor CSS fixes for mobile.</p>
+<p><code>v1.0.0</code> - Your simple straight-forward base boilerplate for your next project</p>
 <h2 id="dependencies">Dependencies</h2>
 <h3 id="grunt-javascript-task-runner">Grunt Javascript Task Runner</h3>
 <p>If you haven&#39;t used <a href="http://gruntjs.com/">Grunt</a> before, be sure to check out the <a href="http://gruntjs.com/getting-started">Getting Started</a> guide, as it explains how to create a <a href="http://gruntjs.com/sample-gruntfile"><code>gruntfile.js</code></a> as well as install and use Grunt plugins. Once you&#39;re familiar with that process, you may use Grunt commands to compile your project.</p>
@@ -177,22 +179,24 @@
 <p>Add <code>.backstretch</code> on the <code>div</code> that you wish to have the image to have a <code>background: cover</code> property.  Then add data attribute named <code>data-background</code> with the path of the the image.  JS will do the rest.</p>
 <h3 id="printable-table">Printable Table</h3>
 <p>Add <code>.printableTable</code> on the <code>table</code> element that you want the plugin to wrap on mobile device.  If the table fits in the mobile device, it will not wrap it in a <code>div</code> and generate the <code>button</code> for the user to click.  Add a data attribute named <code>data-title</code> if you want to use the table title as the filename for the PDF.</p>
-<h4 id="customize-print-settings">Customize Print Settings</h4>
-<p>Edit <code>rr.tableScrollbar.js</code>.</p>
-<pre><code class="lang-javascript">line <span class="hljs-number">27</span>:    <span class="hljs-keyword">var</span> pdf = <span class="hljs-keyword">new</span> jsPDF(orientation, unit, format);
+<h4 id="htmltable-to-pdf-usage-customize-print-settings-">HtmlTable to PDF Usage <del>Customize Print Settings</del></h4>
+<pre><code class="lang-javascript">$(element).pdfTable( <span class="hljs-string">'init'</span>, {
+    position: <span class="hljs-string">'float'</span>, <span class="hljs-comment">// top, bottom, float</span>
+    orientation: <span class="hljs-string">'l'</span>,   <span class="hljs-comment">// landscape (l), portrait (p)</span>
+    unit: <span class="hljs-string">'pt'</span>,         <span class="hljs-comment">// pt, mm, cm, in.</span>
+    format: <span class="hljs-string">'a4'</span>,       <span class="hljs-comment">// a3, a4, a5, letter, legal</span>
+    marginTop: <span class="hljs-number">20</span>,
+    marginRight: <span class="hljs-number">20</span>,
+    marginBottom: <span class="hljs-number">20</span>,
+    marginLeft: <span class="hljs-number">20</span>,
+});
 </code></pre>
-<p>Orientation is the orientation of the PDF.  Options are either <code>&#39;portrait&#39;</code> or <code>&#39;landscape&#39;</code> (shortcuts <code>&#39;p&#39;</code> (Default), <code>&#39;l&#39;</code>).</p>
-<p>Unit is the measurement unit to be used when coordinates are specified. Options available are <code>&#39;pt&#39;</code> (points), <code>&#39;mm&#39;</code> (Default), <code>&#39;cm&#39;</code>, <code>&#39;in&#39;</code>.</p>
-<p>Format is the paper size.  Available options are <code>&#39;a3&#39;</code>, <code>&#39;a4&#39;</code> (Default), <code>&#39;a5&#39;</code>, <code>&#39;letter&#39;</code>, <code>&#39;legal&#39;</code>.</p>
-<pre><code class="lang-javascript">line <span class="hljs-number">37</span>:    <span class="hljs-keyword">var</span> margins = {
-                top: <span class="hljs-number">20</span>,
-                bottom: <span class="hljs-number">20</span>,
-                left: <span class="hljs-number">20</span>,
-                right: <span class="hljs-number">20</span>,
-                width: <span class="hljs-string">'100%'</span>
-            };
-</code></pre>
-<p>These are the margins that will be set when the table is printed on the PDF.</p>
+<p>Use <code>.pdfTable(&#39;init&#39;)</code> to initialize the plugin.  The sample code above are the default options if you do not declare any options.</p>
+<p>Position is the location of the print button. The default option for this is <code>bottom</code>.</p>
+<p>Orientation is the orientation of the PDF.  Options are either <code>&#39;portrait&#39;</code> or <code>&#39;landscape&#39;</code> (shortcuts <code>&#39;p&#39;</code>, <code>&#39;l&#39;</code>).</p>
+<p>Unit is the measurement unit to be used when coordinates are specified. Options available are <code>&#39;pt&#39;</code> (points), <code>&#39;mm&#39;</code>, <code>&#39;cm&#39;</code>, <code>&#39;in&#39;</code>.</p>
+<p>Format is the paper size.  Available options are <code>&#39;a3&#39;</code>, <code>&#39;a4&#39;</code>, <code>&#39;a5&#39;</code>, <code>&#39;letter&#39;</code>, <code>&#39;legal&#39;</code>.</p>
+<p>The last 4 options are the margins that will be set when the table is printed on the PDF.</p>
 <h3 id="lazy-load-images">Lazy Load Images</h3>
 <p><code>&lt;img&gt;</code> tags must have the class <code>lazy</code> attached to it and a data attribute named <code>data-original</code> containing the path of the image.  JS will do the rest.</p>
 <h2 id="issues-bugs-or-feature-requests">Issues, Bugs or Feature Requests</h2>
@@ -207,7 +211,6 @@
 <p><a href="http://www.bitneko.com/">Ang Ziwei</a> for creating the gruntfile.</p>
 <p><a href="http://twitter.com/MrRio">MrRio</a> for his awesome <a href="http://mrrio.github.io/jsPDF/">jsPDF</a> plugin</p>
 <p><a href="http://greensock.com/">GreenSock</a> for making animating so much easier.</p>
-<p><a href="https://github.com/tuupola">Mika Tuupola</a> for the lazy loading feature</p>
 <h2 id="license">License</h2>
 <p>Copyright 2015 <a href="http://www.infiniteimaginations.co/#/hello/">Infinite Imaginations</a></p>
 <p>Licensed under the MIT License</p>
