@@ -1,5 +1,8 @@
+/* global RR: true, TweenMax: true, jQuery: true, Modernizr: true, jRespond: true, Expo: true */
+/* jshint unused: false */
+
 /* requestAnimationFrame Shim */
-(function() {
+(function () {
     'use strict';
 
     var lastTime = 0;
@@ -28,10 +31,11 @@
 }());
 
 /* Ripple Effect */
-var inc = 0;
 function ripple(e, el){
     'use strict';
 
+    var inc = 0;
+    
     // create SVG element
     var dummy = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     dummy.setAttributeNS(null, 'version', '1.1');
@@ -72,8 +76,8 @@ function ripple(e, el){
     $(function() {
 
         // Init Lazy Loading
-        $("img.lazy").lazyload({
-            effect : "fadeIn"
+        $('img.lazy').lazyload({
+            effect : 'fadeIn'
         });
 
         /* Placeholder Alternative */
@@ -111,6 +115,7 @@ function ripple(e, el){
                 }
             });
         })();
+
 
         /* JRespond Breakpoints */
         var jRes = jRespond([

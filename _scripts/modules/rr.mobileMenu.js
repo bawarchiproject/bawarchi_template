@@ -1,3 +1,6 @@
+/* global RR: true, TweenMax: true, TimelineMax: true, jQuery: true, ripple: true, Ease: true, Expo: true */
+/* jshint unused: false */
+
 /**
  * RR - Awesome Mobile Menu
  */
