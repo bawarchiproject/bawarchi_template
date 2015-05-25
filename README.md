@@ -27,9 +27,13 @@ Master Builder is a simple out of the box front-end templating base used for bui
 - Lazy loading images (uses [jQuery_lazyload](https://github.com/tuupola/jquery_lazyload) )
 
 ##Release History
-`v1.0.0` - Your simple straight-forward base boilerplate for your next project
+`v1.2.1` - Updated PDF Table usage
+
+`v1.2.0` - Converted jsPDF table printing into jQuery Plugin.
 
 `v1.1.0` - Added lazy loading feature for images.  Minor CSS fixes for mobile.
+
+`v1.0.0` - Your simple straight-forward base boilerplate for your next project
 
 ##Dependencies
 ###Grunt Javascript Task Runner
@@ -219,27 +223,30 @@ Add `.backstretch` on the `div` that you wish to have the image to have a `backg
 ###Printable Table
 Add `.printableTable` on the `table` element that you want the plugin to wrap on mobile device.  If the table fits in the mobile device, it will not wrap it in a `div` and generate the `button` for the user to click.  Add a data attribute named `data-title` if you want to use the table title as the filename for the PDF.
 
-####Customize Print Settings
-Edit `rr.tableScrollbar.js`.
+####HtmlTable to PDF Usage ~~Customize Print Settings~~ 
 ```javascript
-line 27:    var pdf = new jsPDF(orientation, unit, format);
+$(element).pdfTable( 'init', {
+    position: 'float', // top, bottom, float
+    orientation: 'l',   // landscape (l), portrait (p)
+    unit: 'pt',         // pt, mm, cm, in.
+    format: 'a4',       // a3, a4, a5, letter, legal
+    marginTop: 20,
+    marginRight: 20,
+    marginBottom: 20,
+    marginLeft: 20,
+});
 ```
-Orientation is the orientation of the PDF.  Options are either `'portrait'` or `'landscape'` (shortcuts `'p'` (Default), `'l'`).
+Use `.pdfTable('init')` to initialize the plugin.  The sample code above are the default options if you do not declare any options.
 
-Unit is the measurement unit to be used when coordinates are specified. Options available are `'pt'` (points), `'mm'` (Default), `'cm'`, `'in'`.
+Position is the location of the print button. The default option for this is `bottom`.
 
-Format is the paper size.  Available options are `'a3'`, `'a4'` (Default), `'a5'`, `'letter'`, `'legal'`.
+Orientation is the orientation of the PDF.  Options are either `'portrait'` or `'landscape'` (shortcuts `'p'`, `'l'`).
 
-```javascript
-line 37:    var margins = {
-                top: 20,
-                bottom: 20,
-                left: 20,
-                right: 20,
-                width: '100%'
-            };
-```
-These are the margins that will be set when the table is printed on the PDF.
+Unit is the measurement unit to be used when coordinates are specified. Options available are `'pt'` (points), `'mm'`, `'cm'`, `'in'`.
+
+Format is the paper size.  Available options are `'a3'`, `'a4'`, `'a5'`, `'letter'`, `'legal'`.
+
+The last 4 options are the margins that will be set when the table is printed on the PDF.
 
 ###Lazy Load Images
 `<img>` tags must have the class `lazy` attached to it and a data attribute named `data-original` containing the path of the image.  JS will do the rest.
