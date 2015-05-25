@@ -351,8 +351,14 @@
   }(this, document));
 
 
-  var tests = [];
+  var classes = [];
+  
 
+  var docElement = document.documentElement;
+  
+
+  var tests = [];
+  
 
   var ModernizrProto = {
     // The current version, dummy
@@ -394,7 +400,7 @@
     }
   };
 
-
+  
 
   // Fake some of Object.create
   // so we can force non test results
@@ -407,7 +413,31 @@
   // Overwrite name so constructor name is nicer :D
   Modernizr = new Modernizr();
 
+  
 
+  // Pass in an and array of class names, e.g.:
+  //  ['no-webp', 'borderradius', ...]
+  function setClasses( classes ) {
+    var className = docElement.className;
+    var classPrefix = Modernizr._config.classPrefix || '';
+
+    // Change `no-js` to `js` (we do this independently of the `enableClasses`
+    // option)
+    // Handle classPrefix on this too
+    if(Modernizr._config.enableJSClass) {
+      var reJS = new RegExp('(^|\\s)'+classPrefix+'no-js(\\s|$)');
+      className = className.replace(reJS, '$1'+classPrefix+'js$2');
+    }
+
+    if(Modernizr._config.enableClasses) {
+      // Add the new classes
+      className += ' ' + classPrefix + classes.join(' ' + classPrefix);
+      docElement.className = className;
+    }
+
+  }
+
+  ;
 /*!
 {
   "name": "SVG",
@@ -432,9 +462,6 @@ Detects support for SVG in `<embed>` or `<object>` elements.
 */
 
   Modernizr.addTest('svg', !!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect);
-
-
-  var classes = [];
 
 
   /**
@@ -519,7 +546,7 @@ Detects support for SVG in `<embed>` or `<object>` elements.
       return document.createElement.apply(document, arguments);
     }
   };
-
+  
 /*!
 {
   "name": "placeholder attribute",
@@ -533,9 +560,6 @@ Tests for placeholder attribute in inputs and textareas
 */
 
   Modernizr.addTest('placeholder', ('placeholder' in createElement('input') && 'placeholder' in createElement('textarea')));
-
-
-  var docElement = document.documentElement;
 
 
   function getBody() {
@@ -612,6 +636,66 @@ Tests for placeholder attribute in inputs and textareas
   ;
 
   var testStyles = ModernizrProto.testStyles = injectElementWithStyles;
+  
+/*!
+{
+  "name": "CSS general sibling selector",
+  "caniuse": "css-sel3",
+  "property": "siblinggeneral",
+  "tags": ["css"],
+  "notes": [{
+    "name": "Related Github Issue",
+    "href": "https://github.com/Modernizr/Modernizr/pull/889"
+  }]
+}
+!*/
+
+  Modernizr.addTest('siblinggeneral', function(){
+    return testStyles('#modernizr div {width:100px} #modernizr div ~ div {width:200px;display:block}', function( elem ) {
+      return elem.lastChild.offsetWidth == 200;
+    }, 2);
+  });
+
+/*!
+{
+  "name": "CSS :nth-child pseudo-selector",
+  "caniuse": "css-sel3",
+  "property": "nthchild",
+  "tags": ["css"],
+  "notes": [
+    {
+      "name": "Related Github Issue",
+      "href": "https://github.com/Modernizr/Modernizr/pull/685"
+    },
+    {
+      "name": "Sitepoint :nth-child documentation",
+      "href": "http://reference.sitepoint.com/css/pseudoclass-nthchild"
+    }
+  ],
+  "authors": ["@emilchristensen"],
+  "warnings": ["Known false negative in Safari 3.1 and Safari 3.2.2"]
+}
+!*/
+/* DOC
+Detects support for the ':nth-child()' CSS pseudo-selector.
+*/
+
+  // 5 `<div>` elements with `1px` width are created.
+  // Then every other element has its `width` set to `2px`.
+  // A Javascript loop then tests if the `<div>`s have the expected width
+  // using the modulus operator.
+  testStyles('#modernizr div {width:1px} #modernizr div:nth-child(2n) {width:2px;}', function( elem ) {
+    Modernizr.addTest('nthchild', function() {
+      var elems = elem.getElementsByTagName('div'),
+      test = true;
+
+      for (var i = 0; i < 5; i++) {
+        test = test && elems[i].offsetWidth === i % 2 + 1;
+      }
+
+      return test;
+    });
+  }, 5);
 
 /*!
 {
@@ -680,66 +764,6 @@ Tests for placeholder attribute in inputs and textareas
     Modernizr.addTest('lastchild', elem.lastChild.offsetWidth > elem.firstChild.offsetWidth);
   }, 2);
 
-/*!
-{
-  "name": "CSS :nth-child pseudo-selector",
-  "caniuse": "css-sel3",
-  "property": "nthchild",
-  "tags": ["css"],
-  "notes": [
-    {
-      "name": "Related Github Issue",
-      "href": "https://github.com/Modernizr/Modernizr/pull/685"
-    },
-    {
-      "name": "Sitepoint :nth-child documentation",
-      "href": "http://reference.sitepoint.com/css/pseudoclass-nthchild"
-    }
-  ],
-  "authors": ["@emilchristensen"],
-  "warnings": ["Known false negative in Safari 3.1 and Safari 3.2.2"]
-}
-!*/
-/* DOC
-Detects support for the ':nth-child()' CSS pseudo-selector.
-*/
-
-  // 5 `<div>` elements with `1px` width are created.
-  // Then every other element has its `width` set to `2px`.
-  // A Javascript loop then tests if the `<div>`s have the expected width
-  // using the modulus operator.
-  testStyles('#modernizr div {width:1px} #modernizr div:nth-child(2n) {width:2px;}', function( elem ) {
-    Modernizr.addTest('nthchild', function() {
-      var elems = elem.getElementsByTagName('div'),
-      test = true;
-
-      for (var i = 0; i < 5; i++) {
-        test = test && elems[i].offsetWidth === i % 2 + 1;
-      }
-
-      return test;
-    });
-  }, 5);
-
-/*!
-{
-  "name": "CSS general sibling selector",
-  "caniuse": "css-sel3",
-  "property": "siblinggeneral",
-  "tags": ["css"],
-  "notes": [{
-    "name": "Related Github Issue",
-    "href": "https://github.com/Modernizr/Modernizr/pull/889"
-  }]
-}
-!*/
-
-  Modernizr.addTest('siblinggeneral', function(){
-    return testStyles('#modernizr div {width:100px} #modernizr div ~ div {width:200px;display:block}', function( elem ) {
-      return elem.lastChild.offsetWidth == 200;
-    }, 2);
-  });
-
 
   // adapted from matchMedia polyfill
   // by Scott Jehl and Paul Irish
@@ -766,7 +790,7 @@ Detects support for the ':nth-child()' CSS pseudo-selector.
     };
   })();
 
-
+  
 
   /** Modernizr.mq tests a given media query, live against the current state of the window
    * A few important notes:
@@ -778,7 +802,7 @@ Detects support for the ':nth-child()' CSS pseudo-selector.
    * Modernizr.mq('only screen and (max-width:768)')
    */
   var mq = ModernizrProto.mq = testMediaQuery;
-
+  
 /*!
 {
   "name": "CSS Media Queries",
@@ -803,33 +827,15 @@ Detects support for the ':nth-child()' CSS pseudo-selector.
 
   // More here: github.com/Modernizr/Modernizr/issues/issue/21
   var omPrefixes = 'Moz O ms Webkit';
-
+  
 
   var cssomPrefixes = (ModernizrProto._config.usePrefixes ? omPrefixes.split(' ') : []);
   ModernizrProto._cssomPrefixes = cssomPrefixes;
-
+  
 
   var domPrefixes = (ModernizrProto._config.usePrefixes ? omPrefixes.toLowerCase().split(' ') : []);
   ModernizrProto._domPrefixes = domPrefixes;
-
-
-  /**
-   * contains returns a boolean for if substr is found within str.
-   */
-  function contains( str, substr ) {
-    return !!~('' + str).indexOf(substr);
-  }
-
-  ;
-
-  // Helper function for converting kebab-case to camelCase,
-  // e.g. box-sizing -> boxSizing
-  function cssToDOM( name ) {
-    return name.replace(/([a-z])-([a-z])/g, function(str, m1, m2) {
-      return m1 + m2.toUpperCase();
-    }).replace(/^-/, '');
-  }
-  ;
+  
 
   // Change the function's scope.
   function fnBind(fn, that) {
@@ -870,32 +876,23 @@ Detects support for the ':nth-child()' CSS pseudo-selector.
 
   ;
 
+  // Helper function for converting kebab-case to camelCase,
+  // e.g. box-sizing -> boxSizing
+  function cssToDOM( name ) {
+    return name.replace(/([a-z])-([a-z])/g, function(str, m1, m2) {
+      return m1 + m2.toUpperCase();
+    }).replace(/^-/, '');
+  }
+  ;
+
   /**
-   * Create our "modernizr" element that we do most feature tests on.
+   * contains returns a boolean for if substr is found within str.
    */
-  var modElem = {
-    elem : createElement('modernizr')
-  };
+  function contains( str, substr ) {
+    return !!~('' + str).indexOf(substr);
+  }
 
-  // Clean up this element
-  Modernizr._q.push(function() {
-    delete modElem.elem;
-  });
-
-
-
-  var mStyle = {
-    style : modElem.elem.style
-  };
-
-  // kill ref for gc, must happen before
-  // mod.elem is removed, so we unshift on to
-  // the front of the queue.
-  Modernizr._q.unshift(function() {
-    delete mStyle.style;
-  });
-
-
+  ;
 
   // Helper function for converting camelCase to kebab-case,
   // e.g. boxSizing -> box-sizing
@@ -936,6 +933,33 @@ Detects support for the ':nth-child()' CSS pseudo-selector.
     return undefined;
   }
   ;
+
+  /**
+   * Create our "modernizr" element that we do most feature tests on.
+   */
+  var modElem = {
+    elem : createElement('modernizr')
+  };
+
+  // Clean up this element
+  Modernizr._q.push(function() {
+    delete modElem.elem;
+  });
+
+  
+
+  var mStyle = {
+    style : modElem.elem.style
+  };
+
+  // kill ref for gc, must happen before
+  // mod.elem is removed, so we unshift on to
+  // the front of the queue.
+  Modernizr._q.unshift(function() {
+    delete mStyle.style;
+  });
+
+  
 
   // testProps is a generic CSS / DOM property test.
 
@@ -1055,7 +1079,7 @@ Detects support for the ':nth-child()' CSS pseudo-selector.
   // Modernizr.testAllProps('boxSizing')
   ModernizrProto.testAllProps = testPropsAll;
 
-
+  
 
   /**
    * testAllProps determines whether a given CSS property, in some prefixed
@@ -1077,7 +1101,7 @@ Detects support for the ':nth-child()' CSS pseudo-selector.
     return testPropsAll(prop, undefined, undefined, value, skipValueTest);
   }
   ModernizrProto.testAllProps = testAllProps;
-
+  
 /*!
 {
   "name": "Background Size Cover",
@@ -1108,6 +1132,9 @@ Detects support for the ':nth-child()' CSS pseudo-selector.
 
   // Run each test
   testRunner();
+
+  // Remove the "no-js" class if it exists
+  setClasses(classes);
 
   delete ModernizrProto.addTest;
   delete ModernizrProto.addAsyncTest;

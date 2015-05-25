@@ -288,12 +288,13 @@ svg.ripple {
     width: 100%;
 }
 
-.table {
+.table-wrapper {
     border: 1px solid $grey;
     font-size: 1em !important;
     margin: 20px 0;
     overflow-x: scroll;
     overflow-y: hidden;
+    position: relative;
 
     &.no-scrollbar {
         border: 0;
@@ -302,6 +303,20 @@ svg.ripple {
     }
 
     table { margin-bottom: 0; }
+
+    .btn-print {
+    }
+
+    .pin-wrapper {
+        background: $white;
+        border: 1px solid $grey;
+        font-size: 1em;
+        height: 40px;
+        position: absolute;
+        text-align: center;
+        right: 0;
+        width: 40px;
+    }
 }
 
 
