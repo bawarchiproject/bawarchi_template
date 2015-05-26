@@ -19,6 +19,7 @@ DEPENDENCIES
 00 Imports
 ================================================== */
 
+@import 'common/color';
 @import 'common/mixin';
 @import 'common/vars';
 @import 'common/defaults';
@@ -31,7 +32,7 @@ DEPENDENCIES
 *, *:before, *:after { box-sizing: inherit; }
 html { box-sizing: border-box; }
 body {
-    font: 62.5%/1.5 'Roboto', sans-serif;
+    font: 62.5%/1.5 'Titillium', sans-serif;
     margin: 0 !important;
 }
 /**
@@ -335,7 +336,41 @@ svg.ripple {
 /* =======================================================================
 05 Homepage
 ========================================================================== */
+.login-container{
+    p{
+        margin: 0;
+        color: $white;
+        position: relative;
+    }
 
+    .login-text{
+        font-size: 1.4em;
+        top: -6px;
+    }
+
+    .login-link{
+        a{color: $white;}
+
+        &:before{
+            content: '';
+            display: block;
+            background: url(../images/logo-white.png) transparent no-repeat;
+            width: 30px;
+            height: 37px;
+            height: 37px;
+            position: absolute;
+            left: -33px;
+            top: -7px;
+        }
+
+        font-size: 1.6em;
+        text-decoration: none;
+        top:-4px;
+    }
+
+    height: 50px;
+    background-color: $bawarchi-red;
+}
 
 
 

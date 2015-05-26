@@ -18,7 +18,7 @@
         <link href="/assets/bawarchi/css/responsive.css" rel="stylesheet">
         <!-- /build -->
 
-        <link href="http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic" rel="stylesheet" type="text/css">
+        <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,900,700italic,700,600italic,400italic,600,300,200italic,200,300italic' rel='stylesheet' type='text/css'>
 
         <!-- build:css /assets/bawarchi/css/ie.min.css -->
         <!--[if lt IE 9]> <link rel="stylesheet" href = "/assets/bawarchi/css/ie.css"> <![endif]-->
@@ -28,5 +28,6 @@
     </head>
     <body>
         <header role="banner">
+            <?php include('login-bar.php'); ?>
             <?php include('primary-nav.php'); ?>
         </header>
