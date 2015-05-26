@@ -1,5 +1,5 @@
 #Master Builder
-[![GitHub version](https://badge.fury.io/gh/oninross%2Fmaster_builder.svg)](http://badge.fury.io/gh/oninross%2Fmaster_builder)
+[![GitHub version](https://badge.fury.io/gh/oninross%2Fbawarchi.svg)](http://badge.fury.io/gh/oninross%2Fbawarchi)
 [![License](http://img.shields.io/badge/License-MIT-blue.svg)](http://opensource.org/licenses/MIT)
 
 ##Introduction
@@ -45,8 +45,8 @@ If you haven't used [SASS](http://sass-lang.com/) before, be sure to have a read
 ###Local PHP Server
 **Note:** You must set the document root in your Local PHP Server to the `dist` folder of the project for you to view it in a browser.  You can do this by editing the `httpd.conf` file. See the example below:
 ```
-DocumentRoot "C:\xampp\htdocs\Master_Builder\dist"
-<Directory "C:\xampp\htdocs\Master_Builder\dist">
+DocumentRoot "C:\xampp\htdocs\bawarchi\dist"
+<Directory "C:\xampp\htdocs\bawarchi\dist">
 ```
 
 ###GreenSock TweenMax and TimeLineMax *(optional)*
@@ -58,9 +58,9 @@ It will make your life a whole lot easier once you enable this in your browser. 
 ##Setup
 Provided that you have [Grunt](http://gruntjs.com/) and [Ruby](https://www.ruby-lang.org/en/) installed in your system, follow the steps to get started with your project.
 
-1. Open `package.json` file and change `Master_Builder` the desired project name.  Do not use white spaces.  Hyphens and underscores are accepted.
+1. Open `package.json` file and change `bawarchi` the desired project name.  Do not use white spaces.  Hyphens and underscores are accepted.
 
-2. Open `header.php` and `footer.php`.  Change `Master_Builder` to the project name that you chose in step 1.
+2. Open `header.php` and `footer.php`.  Change `bawarchi` to the project name that you chose in step 1.
 
 3. Open your Command Prompt (Windows) or your Terminal (Mac OSX) and go to the directory of your project.
 
@@ -93,7 +93,7 @@ grunt validate
 
 ##What's in the Package?
 ```
-Master_Builder/
+bawarchi/
 	├── _fonts/
 	├── _icomoon/
 	├── _images/
@@ -252,7 +252,7 @@ The last 4 options are the margins that will be set when the table is printed on
 `<img>` tags must have the class `lazy` attached to it and a data attribute named `data-original` containing the path of the image.  JS will do the rest.
 
 ##Issues, Bugs or Feature Requests
-If you found any bugs, would like to contribute, have comments or suggestions, head down to the [issues section](https://github.com/oninross/master_builder/issues) and log it in.  I will be more than happy to discuss it.
+If you found any bugs, would like to contribute, have comments or suggestions, head down to the [issues section](https://github.com/oninross/bawarchi/issues) and log it in.  I will be more than happy to discuss it.
 
 ##Features to Come
 - CTA button to be on top of table

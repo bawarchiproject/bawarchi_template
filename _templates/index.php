@@ -9,7 +9,7 @@
 		<article class="col-12">
 
 <h1 id="master-builder">Master Builder</h1>
-<p><a href="http://badge.fury.io/gh/oninross%2Fmaster_builder"><img src="https://badge.fury.io/gh/oninross%2Fmaster_builder.svg" alt="GitHub version"></a>
+<p><a href="http://badge.fury.io/gh/oninross%2Fbawarchi"><img src="https://badge.fury.io/gh/oninross%2Fbawarchi.svg" alt="GitHub version"></a>
 <a href="http://opensource.org/licenses/MIT"><img src="http://img.shields.io/badge/License-MIT-blue.svg" alt="License"></a></p>
 <h2 id="introduction">Introduction</h2>
 <p>Master Builder is a simple out of the box front-end templating base used for building new websites created and maintained by Nino Ross Rodriguez.  To get started, jump to <a href="#setup">setup</a>.</p>
@@ -52,8 +52,8 @@
 <p>If you haven&#39;t used <a href="http://sass-lang.com/">SASS</a> before, be sure to have a read on how to get SASS on your local machine in their <a href="http://sass-lang.com/install">installation guide</a> as it will explain how to write your CSS in SASS.  The boilerplate is written in SASS and will be compiled by Grunt</p>
 <h3 id="local-php-server">Local PHP Server</h3>
 <p><strong>Note:</strong> You must set the document root in your Local PHP Server to the <code>dist</code> folder of the project for you to view it in a browser.  You can do this by editing the <code>httpd.conf</code> file. See the example below:</p>
-<pre><code>DocumentRoot &quot;C:\xampp\htdocs\Master_Builder\dist&quot;
-&lt;Directory &quot;C:\xampp\htdocs\Master_Builder\dist&quot;&gt;
+<pre><code>DocumentRoot &quot;C:\xampp\htdocs\bawarchi\dist&quot;
+&lt;Directory &quot;C:\xampp\htdocs\bawarchi\dist&quot;&gt;
 </code></pre><h3 id="greensock-tweenmax-and-timelinemax-optional-">GreenSock TweenMax and TimeLineMax <em>(optional)</em></h3>
 <p>For the cool menu animation.  The files already included in the framework.  If you want to read more about TweenMax, you can check it out their <a href="http://http://greensock.com/">website</a>.</p>
 <h3 id="livereload-optional-">LiveReload <em>(optional)</em></h3>
@@ -61,9 +61,9 @@
 <h2 id="setup">Setup</h2>
 <p>Provided that you have <a href="http://gruntjs.com/">Grunt</a> and <a href="https://www.ruby-lang.org/en/">Ruby</a> installed in your system, follow the steps to get started with your project.</p>
 <ol>
-<li><p>Open <code>package.json</code> file and change <code>Master_Builder</code> the desired project name.  Do not use white spaces.  Hyphens and underscores are accepted.</p>
+<li><p>Open <code>package.json</code> file and change <code>bawarchi</code> the desired project name.  Do not use white spaces.  Hyphens and underscores are accepted.</p>
 </li>
-<li><p>Open <code>header.php</code> and <code>footer.php</code>.  Change <code>Master_Builder</code> to the project name that you chose in step 1.</p>
+<li><p>Open <code>header.php</code> and <code>footer.php</code>.  Change <code>bawarchi</code> to the project name that you chose in step 1.</p>
 </li>
 <li><p>Open your Command Prompt (Windows) or your Terminal (Mac OSX) and go to the directory of your project.</p>
 </li>
@@ -83,7 +83,7 @@
 <pre><code>grunt validate
 </code></pre><p><strong>Validation Task:_</strong> Will sift through your JS and SASS files to check for any errors.</p>
 <h2 id="what-s-in-the-package-">What&#39;s in the Package?</h2>
-<pre><code>Master_Builder/
+<pre><code>bawarchi/
     ├── _fonts/
     ├── _icomoon/
     ├── _images/
@@ -200,7 +200,7 @@
 <h3 id="lazy-load-images">Lazy Load Images</h3>
 <p><code>&lt;img&gt;</code> tags must have the class <code>lazy</code> attached to it and a data attribute named <code>data-original</code> containing the path of the image.  JS will do the rest.</p>
 <h2 id="issues-bugs-or-feature-requests">Issues, Bugs or Feature Requests</h2>
-<p>If you found any bugs, would like to contribute, have comments or suggestions, head down to the <a href="https://github.com/oninross/master_builder/issues">issues section</a> and log it in.  I will be more than happy to discuss it.</p>
+<p>If you found any bugs, would like to contribute, have comments or suggestions, head down to the <a href="https://github.com/oninross/bawarchi/issues">issues section</a> and log it in.  I will be more than happy to discuss it.</p>
 <h2 id="features-to-come">Features to Come</h2>
 <ul>
 <li>CTA button to be on top of table</li>

@@ -1,5 +1,5 @@
 {
-    "name": "Master_Builder",
+    "name": "bawarchi",
     "version": "1.0.0",
     "devDependencies": {
         "grunt": "*",
@@ -19,10 +19,6 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/oninross/master_builder.git"
-    },
-    "author": "Nino Ross Rodriguez",
+    "author": "bawarchi Project",
     "license": "ISC"
 }

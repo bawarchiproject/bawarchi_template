@@ -7,7 +7,7 @@
 <main id="main" role="document">
 
 	<!-- Hero Banner -->
-	<header class="standard-banner backstretch" data-background="/assets/Master_Builder/images/background.jpg">
+	<header class="standard-banner backstretch" data-background="/assets/bawarchi/images/background.jpg">
 		<div class="container-fluid">
 			<h2>Title</h2>
 		</div>
