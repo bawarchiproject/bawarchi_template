@@ -1,7 +1,7 @@
 #primary-nav {
     @include transition( height, 0.2s, ease-in-out );
 
-    height: 45px;
+    height: 55px;
     position: relative;
     top: 0;
     width: 100%;
@@ -11,7 +11,16 @@
 
     & > .nav { padding: 0 !important; }
 
-    h1 { margin-left: $gutter; }
+    h1 { 
+          font-size: 2.8em;
+          position: absolute;
+          top: 8px;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          margin: auto;
+          width: 130px;
+    }
 
     ul {
         overflow: hidden;
@@ -27,8 +36,8 @@
     .wrap {
         @include box-shadow(0, 2px, 5px, 0, rgba(0, 0, 0, 0.26));
 
-        background: $blue;
-        height: 45px;
+        background: $white;
+        height: 55px;
         left: 0;
         padding: 0;
         position: fixed;
@@ -41,20 +50,20 @@
         background: none;
         border: 0;
         float: right;
-        height: 45px;
+        height: 55px;
         padding: 8px;
         width: 45px;
 
         .line {
             @include transition( all, 0.2s, ease-in-out );
 
-            background: $white;
+            background: $bawarchi-red;
             display: block;
-            height: 2px;
-            margin: 2px auto;
+            height: 3px;
+            margin: 4px auto;
             position: relative;
             top: 0;
-            width: 15px;
+            width: 17px;
         }
     }
 
@@ -63,12 +72,12 @@
         float: none;
         display: none;
         list-style: none;
-        margin: 45px 0 0 !important;
+        margin: 55px 0 0 !important;
         padding: 0;
         position: relative;
 
         li {
-            border-top: 1px solid $blue;
+            border-top: 1px solid $bawarchi-red;
             float: none;
             overflow: hidden;
             position: relative;

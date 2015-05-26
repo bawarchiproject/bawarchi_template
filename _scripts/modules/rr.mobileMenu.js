@@ -34,7 +34,7 @@ var RR = (function (parent, $){
         var tl = new TimelineMax();
 
         tl.to( $primaryNav.find('.top'), 0.2, { top: 4, ease: Expo.easeInOut });
-        tl.to( $primaryNav.find('.bot'), 0.2, { top: -4, ease: Expo.easeInOut }, '-=0.2');
+        tl.to( $primaryNav.find('.bot'), 0.2, { top: -10, ease: Expo.easeInOut }, '-=0.2');
 
         tl.to( $primaryNav.find('.mid'), 0.2, { opacity: 0, ease: Expo.easeInOut });
         tl.to( $primaryNav.find('.top'), 0.2, { rotation: 45, ease: Expo.easeInOut }, '-=0.2');
