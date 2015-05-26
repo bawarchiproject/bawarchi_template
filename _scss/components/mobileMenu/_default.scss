@@ -1,8 +1,6 @@
 #primary-nav {
     @extend %clearfix;
 
-    background: $blue;
-
     & > .nav {
         @extend %container;
 
@@ -27,7 +25,7 @@
         li { float: left; }
 
         a {
-            color: $white;
+            color: $b-grey;
             display: block;
             font-size: 1em;
             margin-bottom: 0;
@@ -48,7 +46,7 @@
 
     .wrap {
         float: left;
-        height: 40px;
+        height: auto;
     }
 
     .lvl2 {
