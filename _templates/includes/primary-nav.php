@@ -3,11 +3,12 @@
         <div class="wrap logo">
             <a href="/" class="pull-left"><img src="/assets/bawarchi/images/main-logo.png" /></a>
             <h1>Bawarchi</h1>
+            <p class="teaser">Lorem Ipsum Dolor</p>
         </div>
 
         <ul class="lvl1">
-            <li>
-                <a href="#" class="home"><span class="icon icon-home3"></span></a>
+            <li class="active">
+                <a href="#" ><span class="icon icon-home3"></span></a>
             </li>
             <li>
                 <a href="#" ><span>Resort</span></a>

@@ -52,6 +52,18 @@ DEPENDENCIES
 		margin-top: 3px;
 		margin-left: 10px;
 	}
+
+	.teaser{
+		font-size: 1.4em;
+		position: absolute;
+		width: 160px;
+		text-align: center;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+
+	}
 }
 
 .login-container{
@@ -79,6 +91,43 @@ DEPENDENCIES
 /* =======================================================================
 07 Footer
 ========================================================================== */
+.f-block{
+	h3{
+		font-size: 1.4em;
+		text-align: center; 
+		position: relative;
+	}
+
+	p{display: none;}
+}
+
+.contact{
+	.icon{display: none;}
+
+	padding: 0;
+}
+
+.copyright{
+	text-align: center;
+	margin:0;
+	width: 100%;
+}
+
+.lower-block{
+	padding: 20px 0;
+}
+
+.social-media{
+	li{
+		display: inline-block;
+		margin: 0 5px;
+	}	
+
+	margin-top: 20px;
+	padding: 0;
+	width: 100%;
+   	text-align: center;
+}
 
 
 

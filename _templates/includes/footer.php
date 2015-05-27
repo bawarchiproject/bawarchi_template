@@ -31,7 +31,7 @@
             </section>  
 
             <section class="lower-block">
-                <div class="coypright pull-left">
+                <div class="copyright pull-left">
                     <p>&copy; 2015 Powered by Your Company Name</p>
                 </div>
 
