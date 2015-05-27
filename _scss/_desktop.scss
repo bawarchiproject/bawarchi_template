@@ -97,7 +97,59 @@ header {
 /* =======================================================================
 07 Footer
 ========================================================================== */
+footer{
+	padding: 40px 0 0; 
+}
 
+.f-block{
+	float: left;
+	width: 20%; 
+	box-sizing: border-box;
+  	padding-right: 30px;
+
+  	h3{
+  		margin-top: 0; 
+  		font-size: 18px;
+  	}
+
+  	p{
+  		font-size: 1.4em;
+  	}
+}
+
+.upper-block{
+	@include clearfix();
+
+	padding-bottom: 40px;
+	border-bottom: 1px solid #dedee0;
+}
+
+.lower-block{
+	.icon{
+		@include transition( all, 0.2s, ease-in-out );
+
+		&:hover{
+			color: #484848;
+			background-color: #ffffff;
+			border: 1px solid #484848;
+		}
+	}
+
+	padding: 40px 0;
+}
+
+.copyright{
+	p{
+		font-size: 1.4em;
+	}
+}
+
+.social-media{
+	li{
+		display: inline-block;
+		margin-left: 10px;
+	}
+}
 
 
 /* =======================================================================

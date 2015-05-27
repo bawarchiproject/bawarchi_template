@@ -406,6 +406,66 @@ svg.ripple {
 /* =======================================================================
 07 Footer
 ========================================================================== */
+footer{
+    @include clearfix();
+
+    .container-fluid{padding:0;}
+
+    background-color: $b-light-grey;
+    font-family: "Calibri";
+
+    p{
+        margin-bottom: 0;
+    }
+}
+
+.contact{
+    padding-left: 21px;
+}
+
+
+.f-block{
+    .icon{
+        position: absolute;
+        left: -21px;
+        top: 2px;
+    }
+
+    a{
+        font-family: "Calibri";
+        color: #484848;
+        position: relative;
+        .icon{
+            top: -1px;
+        }
+    }
+
+    p{
+        font-family: "Calibri";
+        color: #8a8a8a;
+        position: relative;
+    }
+}
+
+.lower-block{
+    @include clearfix();
+
+    .icon{
+        background-color: #484848;
+        padding: 7px;
+        border-radius: 50%;
+        color: #ffffff;
+        font-size: 0.9em;
+        border: 1px solid #484848;
+    }
+
+    color: #8a8a8a;
+}
+
+.social-media{
+    list-style: none;
+    margin-bottom: 0;
+}
 
 
 
