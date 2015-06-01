@@ -42,6 +42,23 @@ img {
 	width: auto;
 }
 
+#primary-nav{
+	h1{
+		margin: 0;
+		font-size: 2.8em;
+		width: 180px;
+	}
+
+	.teaser{
+		font-size: 1.4em;
+		margin: 0;
+	}
+}
+
+.logo{
+	margin-top: 10px; 
+}
+
 /* =======================================================================
 02 Layout
 ========================================================================== */
@@ -63,6 +80,47 @@ img {
 /* =======================================================================
 05 Homepage
 ========================================================================== */
+.banner-container{
+	height: 640px;
+}
+
+.search-form{
+
+	 input{
+	 	&:nth-of-type(1){
+	 		border-right: 1px solid #e4e4e4;
+	 		border-top-left-radius: 5px;
+        	border-bottom-left-radius: 5px;
+	 	}
+
+	 	width: 320px;
+	 }
+
+	height: 160px;
+	top: 240px;
+
+}
+
+
+.search-btn{
+	width: 80px;
+	border-top-right-radius: 5px;
+  	border-bottom-right-radius: 5px;
+}
+
+.field-container{
+	max-width: 720px;
+	margin:auto;
+}
+
+.lvl1{
+	margin-top: 15px;
+}
+
+.nav-container{
+	height: 72px;
+}
+
 
 
 
@@ -75,7 +133,58 @@ img {
 /* =======================================================================
 07 Footer
 ========================================================================== */
+footer{
+	padding: 40px 0 0; 
+}
 
+.f-block{
+	float: left;
+	width: 20%; 
+	box-sizing: border-box;
+  	padding-right: 30px;
+
+  	h3{
+  		margin-top: 0; 
+  		font-size: 18px;
+  	}
+
+  	p{
+  		font-size: 1.4em;
+  	}
+}
+
+.upper-block{
+
+	padding-bottom: 40px;
+	border-bottom: 1px solid #dedee0;
+}
+
+.lower-block{
+	.icon{
+		@include transition( all, 0.2s, ease-in-out );
+
+		&:hover{
+			color: #484848;
+			background-color: #ffffff;
+			border: 1px solid #484848;
+		}
+	}
+
+	padding: 40px 0;
+}
+
+.copyright{
+	p{
+		font-size: 1.4em;
+	}
+}
+
+.social-media{
+	li{
+		display: inline-block;
+		margin-left: 10px;
+	}
+}
 
 
 /* =======================================================================

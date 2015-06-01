@@ -6,49 +6,26 @@
 ?>
 
 <main id="main" role="document">
-	<section class="container-fluid">
-		<article class="col-12">
-			<div class="inner-section-search-label">Find the best cooks around you</div>
-			<div class="inner-section-wrapper">
-				<div class="inner-section">
-					<div class="inner-section-select-location">
-						<div class="select-location-icon">
-							<img src="assets/bawarchi/images/map-arrow-icon.png">
-						</div>
-						<div class="select-location-text">
-							<input type="text" class="textBox" placeholder="Select the location">
-						</div>
+	<section class="banner-container bg-image" data-image="/assets/bawarchi/images/banner-image.png">
+	<span class="overlay"></span>
+		<article class="container-fluid">
+			<div class="search-form">
+				<p>Discover the great Cook for your <span class="red">Function!</span></p>
+				<form>
+					<div class="field-container">
+						<span class="icon icon-location"></span>
+						<label class="visuallyhidden" for="ad-location">location</label>
+						<input type="text" name="ad-location" class="location" placeholder="Enter your location"/>
+						<label class="visuallyhidden" for="ad-city">location</label>
+						<input type="text" name="ad-city" class="city" placeholder="Select your city"/>
+						<button class="search-btn" >Search</button>	
 					</div>
-					<div class="inner-section-space"></div>
-					<div class="inner-section-select-city">
-						<div class="select-city-text">
-							<input type="text" class="textBox" placeholder="Select the city">
-						</div>
-					</div>
-					<div class="inner-section-search-button">Search</div>
-				</div>		
-			</div>		
+				</form>
+			</div>
 		</article>
 	</section>
 </div>
 
-	<section class="container-fluid">
-		<article class="col-12">
-			<div class="main-page-best-cooks">
-  				<div class="main-page-best-cooks-inner-header">
-  					Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-  				</div>
-  				<div class="main-page-best-cooks-inner-content">
-  					AWARD WINNING COOK(s) IN FUNCTION(s)
-				</div>	
-				<div class="main-page-best-cooks-selection">
-					<button class="main-page-best-cooks-button">
-						What is happening at the test center?
-					</button>
-				</div>
-  			</div>
-		</article>
-	</section>
 </main>
 
 

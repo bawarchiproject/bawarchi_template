@@ -246,138 +246,7 @@ svg.ripple {
 ========================================================================== */
 
 /*Added by Mayur*/
-#main{
-    background-color: rgba(0,0,0,0.79);
-  height: 644px;
-  width: 100%;
-  position: relative
 
-}
-
-#main-wrapper{
-  background-image: url(/../images/chef.gif);
-  height: 774px;
-}
-
-.inner-section-search-label{
-  text-shadow: 0 0 2px rgba(0,0,0,.1);
-  width: auto;
-  margin: 0 auto;
-  text-align: center;
-  font-size: 28px !important;
-  line-height: 52px;
-  color: #fff;
-  margin-top: 200px;
-  font-weight: 400;
-  letter-spacing: 1px;
-  word-spacing: 1px
-}
-
-.inner-section-wrapper{
-  display:block;
-  height:48px;
-  margin: 20px 55px 20px 55px;
- }
-
-.inner-section{
-  background-color:#fff;
-  height:100%;
-}
-
-.inner-section-select-location,.inner-section-select-city{
-  display:inline-block;
-  height: 100%;
-  width:30em;
-  float:left;
-  
- }
-
-.select-location-icon{
-  float: left;
-  width: 10%;
-  background-image: url(/assets/bawarchi/images/map-arrow-icon.png);
-  height: 100%;
-}
-.select-location-text{
-  float: left;
-  width: 90%;
-  height: 100%;
-}
-
-.textBox{
-  height:100%;
-  width:100%;
-  text-align:center;
-  font-size:20px !important;  
-  border:none;
-}
-
-.select-city-text{
-  float:left;
-  width:100%;
-  height:100%;
-}
-
-.inner-section-space{
-  height: 100%;
-  display: inline-block;
-  width: 0.3em;
-  background-color: $bawarchi-red;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  float:left;
-}
-
-.inner-section-search-button{
-  background-color: $bawarchi-red;
-  font-family: -webkit-pictograph;
-  height: 100%;
-  display: inline-block;
-  width: 9.5em;
-  text-align: center;
-  float: left;
-  text-transform: uppercase;
-  font-size: 26px !important;
-  color: white;
-  font-weight: 400;
-  word-spacing: 1px;
-  }
-  
-.main-page-best-cooks{
-  height: 419px;
-  display:block; 
-}  
-
-.main-page-best-cooks-inner-header{
-  text-align: center;
-  font-family: titillium regular;
-  font-size: 17px !important;
-}
-
-.main-page-best-cooks-inner-content{
-  text-align: center;
-  font-family: titillium regular;
-  font-size: 31px !important;
-  margin-top: 34px; 
-}
-
-.main-page-best-cooks-selection{
-  text-align: center;
-  margin-top: 210px;
-}
-
-.main-page-best-cooks-button{
-    width: 20em;
-    height: auto;
-    background-color: #bd292d;    
-    -moz-border-radius: 15px;    
-    font-size: 20px;
-    -webkit-border-radius: 5px;    
-    border: 5px solid #bd292d;   
-    padding: 5px;
-    color: white;
-
-}
 /*
  *  till here*/
 
@@ -461,9 +330,6 @@ svg.ripple {
 /* =======================================================================
 03 Header
 ========================================================================== */
-#primary-nav{
-    background-color: $white;
-}
 
 
 /* =======================================================================
@@ -524,6 +390,73 @@ svg.ripple {
     }
 }
 
+.banner-container{
+    .overlay{
+      display: block;
+      width: 100%;
+      background-color: #000;
+      height: 100%;
+      background-color: #000;
+      opacity: 0.6;
+      position: absolute;
+  }
+
+    position: relative;
+      
+}
+
+.search-form{
+  & > p{
+      font-size: 3em;
+      color: $white;
+
+  }
+
+  input{
+    &:nth-of-type(1){padding-left: 38px;}
+
+    padding:15px; 
+    background-color: $white;
+    border: none;
+    height: 50px;
+    color: #727272;
+    font-size: 1.5em;
+    float: left;
+  }  
+
+  .red{color: $bawarchi-red;}  
+
+  position: absolute;
+  left:0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}
+
+.search-btn{
+  float: left;
+  height: 50px;
+  background-color: $bawarchi-red; 
+  color: $white;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: none;
+}
+
+.field-container{
+  @include clearfix(); 
+
+  .icon-location{
+    position: absolute;
+    top: 14px;
+    left: 10px;
+    color: #727272;
+    font-size: 2.2em;
+  }
+
+  position: relative;
+}
 
 
 /* =======================================================================

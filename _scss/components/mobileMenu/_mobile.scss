@@ -7,7 +7,7 @@
     width: 100%;
     z-index: 20;
 
-    &.active { height: 100%; }
+    &.active { height: auto; }
 
     & > .nav { padding: 0 !important; }
 

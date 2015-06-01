@@ -116,6 +116,28 @@ function ripple(e, el){
             });
         })();
 
+        /*Backstretch*/
+        (function() {
+        var $backstretch = $(".bg-image");
+            if ($(window).width() > 768) {
+                if ($backstretch.length) {
+                    $backstretch.each(function() {
+                        var $this = $(this), _img = $this.data("image");
+                        $this.backstretch(_img).backstretch("resize");
+                    });
+                }
+            } else {
+                if ($backstretch.length) {
+                    $backstretch.each(function() {
+                       var $this = $(this), _img = $this.data("image");
+                        $this.css({
+                            "background-image": "url(" + _img + ")"
+                        });
+                    });
+                }
+            }
+        })();
+
 
         /* JRespond Breakpoints */
         var jRes = jRespond([
