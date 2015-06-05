@@ -1,4 +1,3 @@
-<div id="main-wrapper">
 <?php
     set_include_path($_SERVER['DOCUMENT_ROOT'] . '/includes');
     $primary = 0;
@@ -63,16 +62,14 @@
 				<a href="#" class="btn-all">View All</a>
 			</li>
 		</ul>
-
-		<article class="custom-block">
-			<h3>AWARD WINNING <span class="ul">COOK(s)</span> IN FUNCTION(s)</h3>
-			<a href="#" class="btn-large">What is happening at the Test Center?</a>
-		</article>
 	</section>
-</div>
-
+	<section class="section-container">
+			<article class="custom-block">
+				<h3>AWARD WINNING <span class="ul">COOK(s)</span> IN FUNCTION(s)</h3>
+				<a href="#" class="btn-large">What is happening at the Test Center?</a>
+			</article>
+	</section>
 </main>
-
 
 <?php include('footer.php'); ?>
 

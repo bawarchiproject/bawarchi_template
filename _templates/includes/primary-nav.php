@@ -3,7 +3,7 @@
         <div class="wrap logo">
             <a href="/" class="pull-left"><img src="/assets/bawarchi/images/main-logo.png" /></a>
             <h1>Bawarchi</h1>
-            <p class="teaser">Lorem Ipsum Dolor</p>
+            <p class="teaser">Cooks Near You</p>
         </div>
 
         <ul class="lvl1">

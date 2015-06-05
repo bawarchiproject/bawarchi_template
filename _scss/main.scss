@@ -330,7 +330,17 @@ svg.ripple {
 /* =======================================================================
 03 Header
 ========================================================================== */
-
+.fixed{
+  position :fixed;
+  z-index:20;
+  background:white;
+  width:100%;
+   -webkit-transition: all 2s ease-in-out;
+    -moz-transition: all 2s ease-in-out;
+    -o-transition: all 2s ease-in-out;
+    -ms-transition: all 2s ease-in-out;
+    transition: all 2s ease-in-out;
+}
 
 /* =======================================================================
 04 Main Navigation
@@ -524,13 +534,19 @@ svg.ripple {
     position: relative;
 }
 
+.section-container{
+    height: 100%;
+    position: relative;
+    padding-top: 5%;
+    background-color: #bd292d
+}
 .custom-block{
     @include clearfix();
 
     h3{
         margin-top: 0;
         font-size: 3.1em;
-        color: #2a2d2e;
+        color: white;
         font-weight: 300;
         margin-bottom: 25px; 
     }
@@ -539,8 +555,8 @@ svg.ripple {
 }
 
 .btn-large{
-    color: $white;
-    background-color: $bawarchi-red;
+    color: $black;
+    background-color: $white;
     padding: 15px 20px;
     position: relative;
     top: 25px;

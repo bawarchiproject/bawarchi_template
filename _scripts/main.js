@@ -79,6 +79,20 @@ function ripple(e, el){
         $('img.lazy').lazyload({
             effect : 'fadeIn'
         });
+		$(window).scroll(function(){
+				var scrollTop = $(window).scrollTop();
+				if(scrollTop > 0){
+					$('.login-container').fadeOut("slow");
+					$('.lvl1').fadeOut("slow");
+					$('#primary-nav').addClass('fixed');
+				}
+				else{
+					$('.login-container').fadeIn("slow");
+					$('.lvl1').fadeIn("slow");
+					$('#primary-nav').removeClass('fixed');
+				}
+		});
+
 
         /* Placeholder Alternative */
         (function (){
