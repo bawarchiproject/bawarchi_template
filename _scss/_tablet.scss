@@ -80,9 +80,6 @@ img {
 /* =======================================================================
 05 Homepage
 ========================================================================== */
-.banner-container{
-	height: 640px;
-}
 
 .search-form{
 
@@ -102,6 +99,9 @@ img {
 	top: 240px;
 
 }
+
+
+
 
 
 .search-btn{
@@ -239,4 +239,72 @@ footer{
 ========================================================================== */
 @import 'components/mobileMenu/tablet';
 
+/* =======================================================================
+09 Main Page (Dynamic Cook List)
+   ========================================================================= */
+.main-page-filter-label{
+  padding: 0px 130px 0 130px;
+}
 
+.main-page-field-container{
+  padding:25px 0 25px 0;
+}
+
+.search-form-main-page{
+
+   input{
+    &:nth-of-type(1){
+      border-right: 1px solid #e4e4e4;
+      border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+    }
+
+    width: 320px;
+   }
+
+   & > p{font-size: 3em;}
+   
+  height: 160px;
+  top: 20px;
+
+}
+
+.main-page-cook-list{
+   width:712px;
+}
+
+
+.main-page-banner-container{
+  height:240px;  
+}
+.banner-container{
+  height: 640px;
+}
+
+.main-page-filter{
+  width:339px;
+}
+
+.outer-cook-type{
+  padding-bottom:10px;
+}
+
+.cook-type{
+    padding: 10px 5px 10px 5px;
+}
+
+.selected{
+  width: 0;
+  height: 0;
+  border-top: 23px solid transparent;
+  border-bottom: 24px solid transparent;
+  border-right: 24px solid #bd292d;
+  float: left;
+  margin-left: -24px  
+}
+
+.selected-cook-type{
+  background: #bd292d;
+  border-radius: 0;
+  color: white;
+}

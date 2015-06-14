@@ -92,8 +92,16 @@ function ripple(e, el){
 					$('#primary-nav').removeClass('fixed');
 				}
 		});
-
-
+		
+		/*Selected Cook */
+   		$('.cook-type').on('click', function () {
+    	    var that = $(this);
+    	    $('.cook-type').removeClass('selected-cook-type');
+        	$('.selected').remove();
+        	that.parent().prepend('<div class="selected"></div>');
+        	that.addClass('selected-cook-type');
+    	});
+    	
         /* Placeholder Alternative */
         (function (){
             if ( Modernizr.placeholder === true ){

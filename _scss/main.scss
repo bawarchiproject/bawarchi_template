@@ -15,7 +15,7 @@ DEPENDENCIES
     06 Standard
     07 Footer
     08 Components
-
+    09 Main Page(Dynamic Cook List)
 00 Imports
 ================================================== */
 
@@ -400,6 +400,7 @@ svg.ripple {
     }
 }
 
+
 .banner-container{
     .overlay{
       display: block;
@@ -415,7 +416,9 @@ svg.ripple {
       
 }
 
-.search-form{
+
+
+.search-form {
   & > p{color: $white;}
 
   input{
@@ -439,6 +442,7 @@ svg.ripple {
   text-align: center;
 }
 
+
 .search-btn{
   float: left;
   height: 50px;
@@ -449,6 +453,8 @@ svg.ripple {
   font-weight: 700;
   border: none;
 }
+
+
 
 .field-container{
   @include clearfix(); 
@@ -653,3 +659,97 @@ footer{
 08 Components
 ========================================================================== */
 @import 'components/mobileMenu/default';
+
+
+/* =======================================================================
+09  Main Page(Dynamic Cook List)
+ =========================================================================*/
+
+.filter-form{
+  font-size: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: monospace;
+}
+
+.main-page-filter{
+  position:relative;
+  float:left;
+}
+
+.main-page-cook-list{
+  float:left;
+}
+.main-page-cook-selected{
+  float:left;
+  position:relative;
+}
+
+.main-page-banner-container{
+  .overlay{
+      display: block;
+      width: 100%;
+      background-color: #000;
+      height: 100%;
+      background-color: #000;
+      opacity: 0.6;
+      position: absolute;
+    
+  }
+  position:relative;
+}
+.search-form-main-page{
+& > p{color: $white;}
+
+  input{
+    &:nth-of-type(1){padding-left: 38px;}
+
+    padding:15px; 
+    background-color: $white;
+    border: none;
+    height: 50px;
+    color: #727272;
+    font-size: 1.5em;
+    float: left;
+  }  
+
+  .red{color: $bawarchi-red;}  
+
+  position: absolute;
+  left:0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+  
+}
+
+.main-area-main-page{
+  height: 100%;
+  margin: auto;
+  padding: 20px 15px;
+  position: relative;
+  display:inline-block; 
+}
+
+.filter-label{
+  border-style: solid;
+  border-color: #bd292d;
+  color: #bd292d;
+  font-weight: bold;
+  border-radius: 10px
+}
+
+.cook-type{
+  border-style: solid;
+  font-size: 17px;
+  text-align: center;
+  border-color: #bd292d;
+  color: #bd292d;
+  border-radius: 5px;
+  border-width: 1px;
+  font-weight: bold;
+  cursor:pointer;
+  font-family: monospace;
+}
+
+
