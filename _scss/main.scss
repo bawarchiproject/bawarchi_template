@@ -15,7 +15,7 @@ DEPENDENCIES
     06 Standard
     07 Footer
     08 Components
-
+    09 Main Page(Dynamic Cook List)
 00 Imports
 ================================================== */
 
@@ -244,6 +244,12 @@ svg.ripple {
 /* =======================================================================
 02 Layout
 ========================================================================== */
+
+/*Added by Mayur*/
+
+/*
+ *  till here*/
+
 .backstretch {
     background-size: cover;
     background-repeat: no-repeat;
@@ -324,10 +330,17 @@ svg.ripple {
 /* =======================================================================
 03 Header
 ========================================================================== */
-#primary-nav{
-    background-color: $white;
+.fixed{
+  position :fixed;
+  z-index:20;
+  background:white;
+  width:100%;
+   -webkit-transition: all 2s ease-in-out;
+    -moz-transition: all 2s ease-in-out;
+    -o-transition: all 2s ease-in-out;
+    -ms-transition: all 2s ease-in-out;
+    transition: all 2s ease-in-out;
 }
-
 
 /* =======================================================================
 04 Main Navigation
@@ -388,12 +401,184 @@ svg.ripple {
 }
 
 
+.banner-container{
+    .overlay{
+      display: block;
+      width: 100%;
+      background-color: #000;
+      height: 100%;
+      background-color: #000;
+      opacity: 0.6;
+      position: absolute;
+  }
+
+    position: relative;
+      
+}
+
+
+
+.search-form {
+  & > p{color: $white;}
+
+  input{
+    &:nth-of-type(1){padding-left: 38px;}
+
+    padding:15px; 
+    background-color: $white;
+    border: none;
+    height: 50px;
+    color: #727272;
+    font-size: 1.5em;
+    float: left;
+  }  
+
+  .red{color: $bawarchi-red;}  
+
+  position: absolute;
+  left:0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}
+
+
+.search-btn{
+  float: left;
+  height: 50px;
+  background-color: $bawarchi-red; 
+  color: $white;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: none;
+}
+
+
+
+.field-container{
+  @include clearfix(); 
+
+  .icon-location{
+    position: absolute;
+    top: 14px;
+    left: 10px;
+    color: #727272;
+    font-size: 2.2em;
+  }
+
+  position: relative;
+}
+
+.categories{
+    @include clearfix();
+        
+    padding: 5px 0 35px;
+    list-style: none;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+}
+
+.cat-tab{
+    img{
+        background-color: transparent;
+        border-radius: 50%;
+    }
+    
+    .content{
+        @include clearfix();
+
+        h3, h5{
+            color: #484848;
+            text-transform: uppercase;
+            margin: 0;
+            float: left;
+        }
+
+        h5{
+            font-size: 1em;
+            font-style: normal;
+            padding-top: 12px;
+            clear:  both;
+        }
+        .cat-count{
+            float: right;
+            background-color: $bawarchi-red;
+            color: $white;
+            padding: 7px 9px;
+            position: relative;
+            top: -4px;
+        }
+
+        float: left;
+        padding-top:10px;
+
+    }
+
+    .btn-all{
+        height: 40px;
+        width: 75px;
+        color: $bawarchi-red;
+        font-size: 0.8em;
+        display: block;
+        position: absolute;
+        right: 20px;
+        bottom: -20px;    
+        background-color: #f7f5f5;
+        border-radius: 5px;
+        border: 1px solid #d4d4d4;
+        padding: 10px 10px 0;
+        margin: 0; 
+        text-align: center; 
+    }
+
+    
+    box-sizing: border-box;
+    float: left;    
+    border: 1px solid #b8b8b8;
+    position: relative;
+}
+
+.section-container{
+    height: 100%;
+    position: relative;
+    padding-top: 5%;
+    background-color: #bd292d
+}
+.custom-block{
+    @include clearfix();
+
+    h3{
+        margin-top: 0;
+        font-size: 3.1em;
+        color: white;
+        font-weight: 300;
+        margin-bottom: 25px; 
+    }
+
+    text-align: center; 
+}
+
+.btn-large{
+    color: $black;
+    background-color: $white;
+    padding: 15px 20px;
+    position: relative;
+    top: 25px;
+    border-radius: 5px;
+}
+
+
+
 
 /* =======================================================================
 06 Standard
 ========================================================================== */
 .container-fluid {
     @extend %container;
+
+    &.tab-container{height: auto;}
 }
 
 .standard-banner {
@@ -476,3 +661,97 @@ footer{
 08 Components
 ========================================================================== */
 @import 'components/mobileMenu/default';
+
+
+/* =======================================================================
+09  Main Page(Dynamic Cook List)
+ =========================================================================*/
+
+.filter-form{
+  font-size: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: monospace;
+}
+
+.main-page-filter{
+  position:relative;
+  float:left;
+}
+
+.main-page-cook-list{
+  float:left;
+}
+.main-page-cook-selected{
+  float:left;
+  position:relative;
+}
+
+.main-page-banner-container{
+  .overlay{
+      display: block;
+      width: 100%;
+      background-color: #000;
+      height: 100%;
+      background-color: #000;
+      opacity: 0.6;
+      position: absolute;
+    
+  }
+  position:relative;
+}
+.search-form-main-page{
+& > p{color: $white;}
+
+  input{
+    &:nth-of-type(1){padding-left: 38px;}
+
+    padding:15px; 
+    background-color: $white;
+    border: none;
+    height: 50px;
+    color: #727272;
+    font-size: 1.5em;
+    float: left;
+  }  
+
+  .red{color: $bawarchi-red;}  
+
+  position: absolute;
+  left:0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+  
+}
+
+.main-area-main-page{
+  height: 100%;
+  margin: auto;
+  padding: 20px 15px;
+  position: relative;
+  display:inline-block; 
+}
+
+.filter-label{
+  border-style: solid;
+  border-color: #bd292d;
+  color: #bd292d;
+  font-weight: bold;
+  border-radius: 10px
+}
+
+.cook-type{
+  border-style: solid;
+  font-size: 17px;
+  text-align: center;
+  border-color: #bd292d;
+  color: #bd292d;
+  border-radius: 5px;
+  border-width: 1px;
+  font-weight: bold;
+  cursor:pointer;
+  font-family: monospace;
+}
+
+

@@ -80,8 +80,54 @@ DEPENDENCIES
 05 Homepage
 ========================================================================== */
 
+.search-form{
+	input, .search-btn{
+		width: 100%;
+		margin-bottom: 5px; 
+	}
+
+	& > p{font-size: 2.6em;}
+
+	top:110px;
+	width: 90%;		
+}
 
 
+.cat-tab{
+
+	img{
+		width: 125px;
+		display: block;
+	}    
+    
+    text-align: center; 
+    width: 100%;
+    margin: 15px 0;
+    min-height: 220px;
+    padding:22px 20px;
+}
+
+.container-fluid{
+	height: auto;
+}
+
+.content{
+
+        h3{font-size: 2.1em;}
+
+        .cat-count{font-size: 17px;}
+
+        width: 100%;
+}  
+
+.custom-block{
+    margin: 25px 0 50px;   
+}
+
+
+.btn-large{
+    font-size: 1.3em;
+}    
 /* =======================================================================
 06 Standard
 ========================================================================== */
@@ -135,5 +181,35 @@ DEPENDENCIES
 08 Components
 ========================================================================== */
 @import 'components/mobileMenu/mobile';
+
+/* =======================================================================
+09 Main Page(Dynamic Cook List)
+   ======================================================================= */
+.main-page-banner-container{
+ height:300px; 
+}
+.banner-container{
+  height: 420px;
+}
+.search-form-main-page{
+input, .search-btn{
+    width: 100%;
+    margin-bottom: 5px; 
+  }
+
+  & > p{font-size: 2.6em;}
+  
+  top:20px;
+  width: 90%;   
+  
+}
+
+.main-page-cook-selected{
+  display:none;
+}
+.main-page-filter{
+  display:none;
+}
+
 
 
