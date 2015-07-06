@@ -1,7 +1,7 @@
 <div id="primary-nav" class="nav-container">
     <nav class="nav" role="navigation">
         <div class="wrap logo">
-            <a href="/" class="pull-left"><img src="/assets/bawarchi/images/main-logo.png" /></a>
+            <a href="/" class="pull-left"><img src="/assets/bawarchi/images/main-logo.png" alt="main-logo.png"/></a>
             <h1>Bawarchi</h1>
             <p class="teaser">Lorem Ipsum Dolor</p>
         </div>

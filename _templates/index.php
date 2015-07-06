@@ -1,4 +1,4 @@
-<div id="main-wrapper">
+
 <?php
     set_include_path($_SERVER['DOCUMENT_ROOT'] . '/includes');
     $primary = 0;
@@ -15,9 +15,9 @@
 					<div class="field-container">
 						<span class="icon icon-location"></span>
 						<label class="visuallyhidden" for="ad-location">location</label>
-						<input type="text" name="ad-location" class="location" placeholder="Enter your location"/>
+						<input type="text" id="ad-location" class="location" placeholder="Enter your location"/>
 						<label class="visuallyhidden" for="ad-city">location</label>
-						<input type="text" name="ad-city" class="city" placeholder="Select your city"/>
+						<input type="text" id="ad-city" class="city" placeholder="Select your city"/>
 						<button class="search-btn" >Search</button>	
 					</div>
 				</form>
