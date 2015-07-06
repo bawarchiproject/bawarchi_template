@@ -5,10 +5,10 @@
     include('header.php');
 ?>
 
-<main id="main" role="document">
+<section id="main" role="main">
 	<section class="banner-container bg-image" data-image="/assets/bawarchi/images/banner-image.png">
 	<span class="overlay"></span>
-		<article class="container-fluid">
+		<section class="container-fluid">
 			<div class="search-form">
 				<p>Discover the great Cook for your <span class="red">Function!</span></p>
 				<form>
@@ -22,7 +22,7 @@
 					</div>
 				</form>
 			</div>
-		</article>
+		</section>
 	</section>
 	<section class="container-fluid tab-container">
 		<ul class="categories">
@@ -69,9 +69,8 @@
 			<a href="#" class="btn-large">What is happening at the Test Center?</a>
 		</article>
 	</section>
-</div>
 
-</main>
+</section>
 
 
 <?php include('footer.php'); ?>
