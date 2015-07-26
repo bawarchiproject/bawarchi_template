@@ -130,6 +130,48 @@ header {
     padding: 20px 0;
 }
 
+.main-tabs{
+	.c-tab{padding: 20px;}
+}	
+
+.list-contact{
+	width: 25%;
+}
+
+.main-text{
+	width: 55%;
+}
+
+.list-container{
+	margin-right: 40px;
+}
+
+.search-btn{
+
+	&:before{
+		@include transition( all, 0.3s, ease-in-out );
+
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: 0px;
+		margin: auto; 
+		background-color: #8C0E12;
+		border-top-right-radius: 5px;
+		border-bottom-right-radius: 5px;
+		opacity: 0.5;
+	}
+
+	&:hover{
+		&:before{width: 100%;}
+	}
+
+	position: relative;
+}
+
 
 /* =======================================================================
 07 Footer
@@ -141,5 +183,4 @@ header {
 08 Components
 ========================================================================== */
 @import 'components/mobileMenu/desktop';
-
 

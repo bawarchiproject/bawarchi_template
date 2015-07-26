@@ -32,6 +32,10 @@ $ultra-bold: 900;
 	-moz-osx-font-smoothing: grayscale;
 }
 
+
+.icon-cross:before {
+	content: "\e604";
+}
 .icon-feed:before {
 	content: "\e600";
 }
@@ -167,4 +171,12 @@ $ultra-bold: 900;
 .icon-linkedin2:before {
 	content: "\eac9";
 }
-
+.icon-long-arrow-up:before {
+	content: "\e602";
+}
+.icon-long-arrow-down:before {
+	content: "\e603";
+}
+.icon-filter:before {
+	content: "\e601";
+}

@@ -565,6 +565,229 @@ svg.ripple {
 }
 
 
+
+.list-label{
+    &.no-display{display: none;}
+
+    &.all{
+        color: #5b5859;
+        border: 1px solid #5b5859;
+        cursor: pointer;
+    }
+
+    color: $bawarchi-red;
+    font-size: 15px;
+    text-transform: uppercase;
+    border: 1px solid $bawarchi-red;
+    border-radius: 5px;
+    padding: 10px;
+    width: auto;
+    text-align: center;
+    margin: 0 auto 10px;
+    display: inline-block;
+}
+
+.filter{
+    @include clearfix();
+
+    .list-label{width: 100%;}
+
+    padding: 0;
+    width: 23%;
+    float: left;
+}
+
+.filter-section{
+    @include clearfix();
+
+    h4{
+        font-size: 14px;
+        text-transform: uppercase;
+        margin-top: 10px;
+        color: $bawarchi-red;
+    }
+
+    &.checkbox{
+
+        label{
+            float: right;
+            width: 80%;
+            text-align: left;
+            margin-bottom: 5px;
+            position: relative;
+            top: -3px;
+        }
+        input{float: left;}
+    }
+
+    label{
+        color: #4f4f4f;
+        text-transform: uppercase;
+        font-size: 13px;
+        text-align: center;     
+        width: 100%;
+        display: block;
+    }
+
+    input[type="text"]{
+        border: 1px solid #cfcfcf;
+        width: 100%;
+        padding: 5px;
+        height: 30px;
+        display: block;
+        border-radius: 5px;
+    }
+    
+    padding: 10px;
+}
+
+.main-tabs{
+    .c-tab{
+        &.active{
+            background-color: #8C0E12;
+        }
+
+        position: relative;
+        cursor: pointer;
+        float: left;
+        background-color: #bd292d;
+        color: #ffffff;
+        padding: 15px;
+        word-break: break-word;
+        box-sizing: border-box;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    @include clearfix();
+
+    width: 100%;
+}
+
+.list-container{
+    .list-item{
+        li{@include clearfix();}
+
+        .cta{
+            width: 95px;
+            background-color: purple;
+            border-radius: 50%;
+            float: left;
+            margin: 0 25px 45px 0;
+        }
+
+        .main-text{float: left;}
+
+        .tag-info{
+            margin-top: 15px;
+            color: #606060;
+            font-size: 12px;
+            float: left;
+            width: 80%;
+        }
+
+        .tags{
+            margin-top: 5px;
+            float: left;
+        }
+
+        @include clearfix();
+
+        .list-label{margin: 5px 10px;}
+
+        li{
+            &:last-child{
+                border-bottom : none;
+            }
+
+            padding:20px 0 15px;
+            border-bottom: 1px solid #dadada;
+        }
+        
+        list-style: none;
+        padding-left: 0;
+        
+    }
+
+    float: right;
+    width: 72%;
+    padding-top: 0;
+    padding-left: 4%;
+    box-sizing: border-box;
+    border-left: 1px solid #c1c1c1;
+    margin-left: 0;
+}
+
+.main-text{
+
+    h3{
+        margin: 0 10px 0 0;
+        text-transform: uppercase;
+        float: left;
+    }
+
+    .tag-line{
+        clear: both;
+        margin: 0;
+        position: relative;
+        top: 10px;
+        font-style: normal;
+        position: relative;
+        top: 10px;
+        font-style: normal;
+        font-size: 18px;
+        text-transform: uppercase;
+    }
+
+    .star{margin-top: 9px;}
+
+    width: 53%;
+
+}
+.star{
+
+    img{display: inline-block;}
+
+    float: left;
+
+}
+
+.mobile-filter-app{display: none;}
+
+.list-contact{
+    @include clearfix();
+
+    .icon-phone{
+        float: left;
+        color: $white;
+        background-color: #42e0c8;
+        font-size: 20px;
+        padding: 5px;
+        box-sizing: border-box;
+        margin-right: 10px;
+    }
+
+    h6{
+        margin: 5px 0 0;
+        font-size: 20px;
+        color: #555555;
+        font-style: normal;
+    }
+
+    p{
+        margin: 17px 0 0;
+        text-align: center;
+    }
+
+    padding: 5px;
+    border: 1px solid #484848;
+    float: left;
+    border-radius: 5px;
+    width: 22%;
+}
+
+
+
 /* =======================================================================
 07 Footer
 ========================================================================== */

@@ -81,6 +81,14 @@ img {
 05 Homepage
 ========================================================================== */
 .banner-container{
+	&.small-banner{
+		height:240px;
+
+		.search-form{
+			top:40px;
+		}
+	}
+
 	height: 640px;
 }
 
@@ -175,7 +183,70 @@ img {
 06 Standard
 ========================================================================== */
 
+.listing{
+	@include clearfix();
+}
 
+
+
+
+
+.main-tabs{
+	.c-tab{
+		&.active{
+			&:hover{opacity: 1;}
+		}
+
+		&:hover{
+			opacity: 0.8;
+		}
+
+		&:last-child{border-right:none;}
+
+		width: 25%;
+		font-size: 22px;
+		height: 125px;
+		text-align: center;
+		border-right: 1px solid #8C0E12;
+	}
+}
+
+
+.sort{
+	@include clearfix();
+	
+	.list-label{
+		float: left;
+		margin-right: 10px;
+	}
+
+	ul{
+		@include clearfix();
+		
+		li{
+			&.active{
+				font-weight: 600;
+			}
+
+			float: left;
+			padding: 0 10px;
+			cursor: pointer;
+			text-transform: uppercase;
+			font-size: 13px;
+		}
+
+	    list-style: none;
+	    padding-left: 0;
+	    width: auto;
+	    margin: 2px 0 0 10px;
+	    float: left;
+	    box-sizing: border-box;
+	    border: 1px solid #c1c1c1;
+	    padding: 5px 20px 5px;
+	    border-radius: 15px;
+	    text-align: center;
+	}
+}
 
 /* =======================================================================
 07 Footer

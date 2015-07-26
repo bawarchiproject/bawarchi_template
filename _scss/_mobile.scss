@@ -27,7 +27,9 @@ DEPENDENCIES
 /* =======================================================================
 01 Global
 ========================================================================== */
-
+.no-mobile{
+	display: none !important;
+}
 
 
 /* =======================================================================
@@ -135,7 +137,154 @@ DEPENDENCIES
 ========================================================================== */
 .standard-banner { height: 150px; }
 
+.main-tabs{
+    .c-tab{
+    	width: 100%;
+		font-size: 15px;
+		height: auto;
+    }
+}    
 
+.list-container{
+	.list-item{
+		.cta{
+			margin: 0 auto 20px;
+			float: none;
+			width: auto;
+		}
+
+		.tag-info{
+			width: 100%;
+		}
+	}
+
+	width: 100%;
+	border-left: none;
+}
+
+.main-text{
+	width: 100%;
+}
+
+.star{
+	img{width: 25px;}
+}
+
+.list-contact{
+	.icon-phone{
+		float: none;
+		display: inline-block;
+	}
+
+	h6{display: inline-block;}
+
+	margin-top: 15px;
+	width: 100%;
+	text-align: center;
+}
+
+.mobile-filter-app{
+	@include clearfix();
+
+	.m-filter, .m-sort{
+		width: 50%;
+		float: left;
+		height: 50px;
+		color: $white;
+	}
+
+	.m-filter{border-right: 1px solid #8C0E12;}
+
+	.field{
+		@include clearfix();
+
+		width: 115px;
+		margin: 4px auto 0;
+
+		p{
+			margin: 0;
+			font-size: 16px;
+			text-transform: uppercase;
+			position: relative;
+			top: 10px;
+			left: 8px;
+		}
+	}
+
+	.icon{
+		font-size: 26px;
+		position: relative;
+		top: 8px;
+		float: left;
+	}
+
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	left:0;
+	right: 0;
+	margin :auto;
+	display: block;
+	height: 50px;
+	background-color: $bawarchi-red;
+}
+
+.m-overlay{
+	&.show{ display: block;}
+	z-index: 999;
+	content: '';
+	display: block;
+	background-color: $black;
+	opacity: 0.9;
+	position: fixed;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0; 
+	display: none;
+}
+
+.filter{
+	&.no-mobile.show{display:block !important;}
+	&.show{
+		form{
+			overflow: scroll;
+			position: relative;
+			height: 85%;
+			margin-bottom: 15px;
+		}
+
+		position: fixed;
+		top: 20px;
+		left: 10px;
+		right: 10px;
+		bottom: 20px;
+		margin: auto;
+		width: 75%;
+		background-color: white;
+		padding: 5px 10px 60px;
+		z-index: 9999;
+
+	}
+
+	@include transition( all, 2s, ease-in-out );	
+
+	.filter-apply, .filter-close{
+		background-color: $bawarchi-red;
+		padding: 5px;
+		width: 100%;
+		color: $white;
+		text-transform: uppercase;		
+		text-align: center;
+		font-size: 14px;
+		border-radius: 5px; 
+		height: 30px;
+		outline: none;
+		border: none;
+		margin-top: 4px; 
+	}
+}
 /* =======================================================================
 07 Footer
 ========================================================================== */

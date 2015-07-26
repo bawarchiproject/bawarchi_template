@@ -82,7 +82,6 @@ function ripple(e, el){
 
         /* Placeholder Alternative */
         (function (){
-            if ( Modernizr.placeholder === true ){
                 var $inputText = $('.input-txt');
 
                 $inputText
@@ -98,7 +97,6 @@ function ripple(e, el){
                         var $this = $(this);
                         if ( $this.val() ===  '') $this.val($this.attr('placeholder')).addClass('blur');
                 });
-            }
         })();
 
 
@@ -135,6 +133,77 @@ function ripple(e, el){
                         });
                     });
                 }
+            }
+        })();
+
+        /*Active Sort Switch*/
+        (function() {
+        var $sortList = $(".sort li"),
+            $rateStar = $('.star'),
+            $allLabel = $('.list-label.all'),
+            $cTab = $('.c-tab');
+            if($sortList.length){
+                $sortList.on('click', function(){
+                    var $thisList = $(this);
+
+                        $thisList.siblings().removeClass('active');
+                        $thisList.addClass('active');
+                });
+
+                $rateStar.raty({
+                    path: '../assets/bawarchi/images'
+                });
+
+                $allLabel.on('click', function(){
+                    $(this).siblings().removeClass('no-display');
+                });
+
+                $cTab.on('click', function(){
+                    $(this).siblings().removeClass('active');
+                    $(this).addClass('active');
+                });
+            }
+        })();
+
+        /*onScroll Events*/
+        (function(){
+
+            var $mobileFilter = $('.mobile-filter-app'),
+                $mAside = $('.filter'),
+                $mFilter = $('.m-filter'),
+                $fClose = $('.filter-close, .m-overlay'),
+                flag = 1;
+
+            if($(window).width() < 768){
+
+                $(window).scroll(function() {
+                    var hT = $('.upper-block').offset().top,
+                        hH = $('.upper-block').outerHeight(),
+                        wH = $(window).height(),
+                        wS = $(this).scrollTop();
+                        if (wS > (hT-wH)){
+                            if(flag  == 1){
+                                $mobileFilter.fadeOut(300);
+                                flag = 0;
+                            }    
+                        }
+                        else{
+                            if(flag  == 0){
+                                $mobileFilter.fadeIn(300);   
+                                flag = 1;
+                            }
+                        }
+                });
+
+                $mFilter.on('click', function(){
+                    $mAside.addClass('show');
+                    $('.m-overlay').addClass('show');
+                });
+
+                $fClose.on('click', function(){
+                    $mAside.removeClass('show');
+                    $('.m-overlay').removeClass('show');
+                })
             }
         })();
 
