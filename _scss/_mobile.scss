@@ -245,30 +245,16 @@ DEPENDENCIES
 	display: none;
 }
 
-.filter{
+.m-app-container{
+	h4{width: 100%;}
+
 	&.no-mobile.show{display:block !important;}
 	&.show{
-		form{
-			overflow: scroll;
-			position: relative;
-			height: 85%;
-			margin-bottom: 15px;
-		}
-
-		position: fixed;
-		top: 20px;
-		left: 10px;
-		right: 10px;
-		bottom: 20px;
-		margin: auto;
-		width: 75%;
-		background-color: white;
-		padding: 5px 10px 60px;
-		z-index: 9999;
-
+		right: 0;
+		left: 0;
 	}
 
-	@include transition( all, 2s, ease-in-out );	
+	@include transition( all, 0.8s, ease-in-out );	
 
 	.filter-apply, .filter-close{
 		background-color: $bawarchi-red;
@@ -284,6 +270,42 @@ DEPENDENCIES
 		border: none;
 		margin-top: 4px; 
 	}
+
+	form{
+		overflow: scroll;
+		position: relative;
+		height: 85%;
+		margin-bottom: 15px;
+	}
+
+	ul{
+		list-style: none;
+		padding: 0;
+
+		li{
+			&.active{
+				font-weight: 600;
+			}
+			text-align: center;
+			padding: 10px;
+			font-size: 16px;
+		}
+	}
+
+	&.sort-mobile{
+		top: inherit;
+		padding: 10px;
+	}
+
+	right: -200%;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	width: 100%;
+	background-color: white;
+	padding: 10px 10px 60px;
+	z-index: 9999;
 }
 /* =======================================================================
 07 Footer

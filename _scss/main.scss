@@ -226,7 +226,7 @@ img {
     margin: auto;
     padding: 20px $gutter;
     position: relative;
-    max-width: 960px;
+    max-width: 1140px;
 }
 
 svg.ripple {
@@ -593,7 +593,7 @@ svg.ripple {
     .list-label{width: 100%;}
 
     padding: 0;
-    width: 23%;
+    width: 17%;
     float: left;
 }
 
@@ -644,15 +644,15 @@ svg.ripple {
 .main-tabs{
     .c-tab{
         &.active{
-            background-color: #8C0E12;
+            background-color: #bd292d;
+            color: $white;
         }
 
         position: relative;
         cursor: pointer;
-        float: left;
-        background-color: #bd292d;
-        color: #ffffff;
-        padding: 15px;
+        background-color: transparent;
+        color: #bd292d;
+        padding: 10px;
         word-break: break-word;
         box-sizing: border-box;
         text-transform: uppercase;
@@ -660,8 +660,6 @@ svg.ripple {
     }
 
     @include clearfix();
-
-    width: 100%;
 }
 
 .list-container{
@@ -709,8 +707,8 @@ svg.ripple {
         
     }
 
-    float: right;
-    width: 72%;
+    float: left;
+    width: 59%;
     padding-top: 0;
     padding-left: 4%;
     box-sizing: border-box;

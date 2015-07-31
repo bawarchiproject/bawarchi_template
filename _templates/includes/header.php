@@ -8,7 +8,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta name="description" content="">
-        <title>Master Builder</title>
+        <title>Bawarchi</title>
 
         <!-- build:css /assets/bawarchi/css/main.min.css -->
         <link href="/assets/bawarchi/css/main.css" rel="stylesheet">

@@ -138,7 +138,7 @@ function ripple(e, el){
 
         /*Active Sort Switch*/
         (function() {
-        var $sortList = $(".sort li"),
+        var $sortList = $(".sort-app li"),
             $rateStar = $('.star'),
             $allLabel = $('.list-label.all'),
             $cTab = $('.c-tab');
@@ -171,6 +171,9 @@ function ripple(e, el){
             var $mobileFilter = $('.mobile-filter-app'),
                 $mAside = $('.filter'),
                 $mFilter = $('.m-filter'),
+                $mAsideFilter = $('.filter'),
+                $mAsideSort = $('.sort-mobile'),
+                $mSort = $('.m-sort'),
                 $fClose = $('.filter-close, .m-overlay'),
                 flag = 1;
 
@@ -196,12 +199,17 @@ function ripple(e, el){
                 });
 
                 $mFilter.on('click', function(){
-                    $mAside.addClass('show');
+                    $mAsideFilter.addClass('show');
+                    //$('.m-overlay').addClass('show');
+                });
+
+                $mSort.on('click', function(){
+                    $mAsideSort.addClass('show');
                     $('.m-overlay').addClass('show');
                 });
 
                 $fClose.on('click', function(){
-                    $mAside.removeClass('show');
+                    $(this).parent().removeClass('show');
                     $('.m-overlay').removeClass('show');
                 })
             }

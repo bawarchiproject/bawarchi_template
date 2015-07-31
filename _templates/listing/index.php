@@ -24,15 +24,70 @@
 			</div>
 		</section>
 	</section>
-	<section class="main-tabs">
-		<div class="c-tab active">cateres</div>
-		<div class="c-tab">normal day-to-day cooks</div>
-		<div class="c-tab">specific cuisine caterers</div>
-		<div class="c-tab">chefs (professionsals)</div>
-	</section>
+	
 	<div class="container-fluid">
+		<aside  class="filter m-app-container">
+			<h4 class="list-label">Filter</h4>
+			<form action="" method="">
+				<div class="filter-section">
+					<label for="text1">Location</label>
+					<input type="text" id="text1"/> 
+				</div>
+				<div class="filter-section">
+					<label for="text2">Cuisine</label>
+					<input type="text" id="tex2"/> 
+				</div>
+				<div class="filter-section checkbox">
+
+					<h4>filter text</h4>
+
+					<label for="cb1">Checkbox 1</label>
+					<input type="checkbox" id="cb1"/>
+					<label for="cb2">Checkbox 2</label>
+					<input type="checkbox" id="cb2"/>
+					<label for="cb3">Checkbox 3</label>
+					<input type="checkbox" id="cb3"/>
+					<label for="cb4">Checkbox 4</label>
+					<input type="checkbox" id="cb4"/>
+					<label for="cb4">Checkbox 5</label>
+					<input type="checkbox" id="cb5"/>
+					<label for="cb5">Checkbox 6</label>
+					<input type="checkbox" id="cb6"/> 
+				</div>
+				<div class="filter-section checkbox">
+					<h4>filter text</h4>
+
+					<label for="cb7">Checkbox 7</label>
+					<input type="checkbox" id="cb7"/>
+					<label for="cb8">Checkbox 8</label>
+					<input type="checkbox" id="cb8"/>
+					<label for="cb9">Checkbox 9</label>
+					<input type="checkbox" id="cb9"/>
+					<label for="cb10">Checkbox 10</label>
+					<input type="checkbox" id="cb10"/>
+					<label for="cb11">Checkbox 11</label>
+					<input type="checkbox" id="cb11"/>
+					<label for="cb12">Checkbox 12</label>
+					<input type="checkbox" id="cb12"/> 					
+				</div>
+			</form>
+			<button class="filter-apply mobile-only">Apply</button>
+			<button class="filter-close mobile-only">Close</button>
+		</aside>
+		<div  class="sort-mobile m-app-container mobile-only">
+			<h4 class="list-label">Sort By</h4>
+			<form action="" method="">
+				<ul class="sort-app">
+					<li class="active">High to Low</li>
+					<li>Low to High</li>
+					<li>Rating</li>
+					<li>Availability</li>
+				</ul>
+			</form>
+			<button class="filter-close mobile-only">Close</button>
+		</div>
 		<section class=" list-container">
-			<div class="sort no-mobile">
+			<div class="sort sort-app no-mobile">
 				<h4 class="list-label">sort</h4>
 				<ul>
 					<li class="active">High to Low</li>
@@ -226,6 +281,13 @@
 
 			</ul>
 		</section>
+		<section class="main-tabs">
+			<div class="c-tab active">caterers</div>
+			<div class="c-tab">normal day-to-day cooks</div>
+			<div class="c-tab">specific cuisine caterers</div>
+			<div class="c-tab">chefs (professionsals)</div>
+		</section>
+		
 		<section class="mobile-filter-app">
 			<div class="m-filter">
 				<div class="field">
@@ -241,55 +303,8 @@
 				</div>
 			</div>
 		</section>
+		
 		<div class="m-overlay"></div>
-		<aside  class="filter no-mobile">
-			<h4 class="list-label">Filter</h4>
-			<form action="" method="">
-				<div class="filter-section">
-					<label for="text1">Location</label>
-					<input type="text" id="text1"/> 
-				</div>
-				<div class="filter-section">
-					<label for="text2">Cuisine</label>
-					<input type="text" id="tex2"/> 
-				</div>
-				<div class="filter-section checkbox">
-
-					<h4>filter text</h4>
-
-					<label for="cb1">Checkbox 1</label>
-					<input type="checkbox" id="cb1"/>
-					<label for="cb2">Checkbox 2</label>
-					<input type="checkbox" id="cb2"/>
-					<label for="cb3">Checkbox 3</label>
-					<input type="checkbox" id="cb3"/>
-					<label for="cb4">Checkbox 4</label>
-					<input type="checkbox" id="cb4"/>
-					<label for="cb4">Checkbox 5</label>
-					<input type="checkbox" id="cb5"/>
-					<label for="cb5">Checkbox 6</label>
-					<input type="checkbox" id="cb6"/> 
-				</div>
-				<div class="filter-section checkbox">
-					<h4>filter text</h4>
-
-					<label for="cb7">Checkbox 7</label>
-					<input type="checkbox" id="cb7"/>
-					<label for="cb8">Checkbox 8</label>
-					<input type="checkbox" id="cb8"/>
-					<label for="cb9">Checkbox 9</label>
-					<input type="checkbox" id="cb9"/>
-					<label for="cb10">Checkbox 10</label>
-					<input type="checkbox" id="cb10"/>
-					<label for="cb11">Checkbox 11</label>
-					<input type="checkbox" id="cb11"/>
-					<label for="cb12">Checkbox 12</label>
-					<input type="checkbox" id="cb12"/> 					
-				</div>
-			</form>
-			<button class="filter-apply mobile-only">Apply</button>
-			<button class="filter-close mobile-only">Close</button>
-		</aside>
 	</div>
 
 </section>

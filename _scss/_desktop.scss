@@ -131,8 +131,55 @@ header {
 }
 
 .main-tabs{
-	.c-tab{padding: 20px;}
-}	
+	.c-tab{
+		&.active{
+			&:hover{opacity: 1;}
+
+			&:before{
+				width: 0;
+				height: 0;
+				top: -1px;			
+				border-right: 20px solid #bd292d;
+
+			}
+
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+
+		&:hover{
+			opacity: 0.8;
+		}
+
+		@include transition( all, 0.2s, ease-in-out );
+
+		&:before{
+			@include transition( all, 0.2s, ease-in-out );
+
+			position: absolute;
+			top: 0px;
+			left: -21px;
+			content: '';
+			display: block;	
+			border-top: 22px solid transparent;
+			border-bottom: 22px solid transparent;
+			border-right: 20px solid transparent;
+		}	
+
+		width: 100%;
+		position: relative;
+		font-size: 14px;
+		text-transform: uppercase;
+		text-align: center;
+		height: 44px;
+		border: 1px solid #bd292d;
+		border-radius: 5px;
+		margin-bottom: 15px;
+	}
+
+	float: left;
+	width: 20%;
+}
 
 .list-contact{
 	width: 25%;
@@ -144,7 +191,12 @@ header {
 
 .list-container{
 	margin-right: 40px;
+	width: 59%;
 }
+
+.filter{width: 17%;}
+
+.main-tabs{display: block;}
 
 .search-btn{
 
