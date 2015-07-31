@@ -209,7 +209,7 @@ function ripple(e, el){
                 });
 
                 $fClose.on('click', function(){
-                    $(this).parent().removeClass('show');
+                    $('.m-app-container').removeClass('show');
                     $('.m-overlay').removeClass('show');
                 })
             }

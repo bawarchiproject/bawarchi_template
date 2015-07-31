@@ -233,7 +233,7 @@ DEPENDENCIES
 	&.show{ display: block;}
 	z-index: 999;
 	content: '';
-	display: block;
+	display: none;
 	background-color: $black;
 	opacity: 0.9;
 	position: fixed;
@@ -247,6 +247,8 @@ DEPENDENCIES
 
 .m-app-container{
 	h4{width: 100%;}
+
+
 
 	&.no-mobile.show{display:block !important;}
 	&.show{
@@ -293,6 +295,8 @@ DEPENDENCIES
 	}
 
 	&.sort-mobile{
+		form{overflow: hidden;}
+
 		top: inherit;
 		padding: 10px;
 	}
